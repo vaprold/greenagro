@@ -1,0 +1,26 @@
+{
+  "name": "greenagro",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Greenagro",
+  "author": "Валерий Евдокимов",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vaprold/greenagro.git"
+  },
+  "dependencies": {
+    "eslint": "^2.4.0",
+    "webpack": "^1.12.14",
+
+    "webpack-dev-server": "^1.14.1"
+  },
+
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "test": "eslint src",
+    "start": "webpack-dev-server --watch --config webpack.config.js"
+  },
+  "engines": {
+    "node": "^5.0.0"
+  }
+}
