@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Green Agro</title>
+    <title>Компания Грин Агро</title>
   </head>
-  <body>
+  <body class="mainpage">
     <header class="container clearfix">
-        <div class="logo">
-          <img src="img/nav_logo.png" alt="Green Agro">
-        </div>
+        <h1 class="menu-logo">
+          <a href="index.html"><img src="img/nav_logo.png" alt="Green Agro"></a>
+        </h1>
 
         <nav class="main-navigation">
           <ul>
@@ -31,7 +31,7 @@
         </div>
     </header>
 
-    <main class="mainpage container">
+    <main class="container">
       <article class="promo-block">
         <div class="promo-content">
           <div class="promo-title">
@@ -77,21 +77,21 @@
           </article>
           <article class="news-item">
             <a href="news_2.html">
-              <img class="news-image" src="img\news_2.jpg" alt="Новая линейка кормов">
+              <img class="news-image" src="img\news_2.jpg" alt="Награда Innovative through research">
               <p class="news-date">5 июля 2017</p>
               <p>Компания «Грин Агро» получила награду "Innovative through research"</p>
             </a>
           </article>
           <article class="news-item">
             <a href="news_3.html">
-              <img class="news-image" src="img\news_3.jpg" alt="Новая линейка кормов">
+              <img class="news-image" src="img\news_3.jpg" alt="Филиал в Самаре">
               <p class="news-date">2 января 2017</p>
               <p>Открыт новый филиал в городе Самара</p>
             </a>
           </article>
           <article class="news-item">
             <a href="news_4.html">
-              <img class="news-image" src="img\news_4.jpg" alt="Новая линейка кормов">
+              <img class="news-image" src="img\news_4.jpg" alt="Выставка Nexpo">
               <p class="news-date">18 ноября 2016</p>
               <p>Компания «Грин Агро» приняла участие в выставке сельскохозяйственных достижений “Nexpo”</p>
             </a>
@@ -111,7 +111,7 @@
           <p>143009,<br> Моск. обл., г. Одинцово, ул. Северная, 24, офис 33</p>
           <p>+7 926 620-44-44</p>
           <p><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-          <p><button type="button" name="button" class="btn">Cвяжитесь с нами</button></p>
+          <p><button type="button" class="btn">Cвяжитесь с нами</button></p>
         </div>
       </section>
 
@@ -136,6 +136,23 @@
         ООО «Грин Агро», Все права защищены.
       </p>
     </footer>
+
+    <section class="popup popup-feedback">
+      <form class="popup-form">
+        <div class="form-title">Задать вопрос</div>
+        <input type="text" name="name" id="feedback_name" placeholder="Пожалуйста, представьтесь!" class="inputbox">
+        <input type="email" name="email" id="feedback_mail" placeholder="На какой адрес прислать ответ?" class="inputbox">
+        <input type="phone" name="phone" id="feedback_phone" placeholder="Куда вам перезвонить?" class="inputbox">
+        <textarea name="message" rows="5" class="inputbox" placeholder="Напишите ваш вопрос"></textarea>
+        <div class="clearfix">
+          <button type="submit" name="submit" class="btn">Отправить</button>
+          <button type="button" name="close" class="btn btn-gray">Закрыть окно</button>
+        </div>
+        <p class="personal">Отправляя эту форму, Вы соглашаетесь на обработку персональных данных.</p>
+        <button type="button" name="close" class="btn-close">Закрыть окно</button>
+      </form>
+    </section>
+    
     <script src="js/main.js" charset="utf-8"></script>
   </body>
 </html>
