@@ -7,9 +7,21 @@
 <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="mainpage">
+
+    <!-- <div class="cont">
+      <div class="el">
+        <span>1</span>
+      </div>
+      <div class="el">
+        <span>2</span>
+      </div>
+      <div class="el">
+        <span>3</span>
+      </div>
+    </div> -->
     <header class="container clearfix">
         <h1 class="menu-logo">
-          <a href="index.html"><img src="img/header-logo.png" alt="Green Agro" width="166" height="60"></a>
+          <a href="index.html"><img src="img/header-logo.png" alt="Грин Агро" width="166px" height="60px"></a>
         </h1>
 
         <nav class="main-navigation">
@@ -22,26 +34,28 @@
         </nav>
 
         <div class="header-tools">
-          <span class="phone"><a href="phoneto:+79266204444">8 926 620-44-44</a></span>
-          <span class="language"><a href="#">Рус</a></span>
-          <div class="language-set">
-            <ul>
-              <li><a href="#">Рус</a></li>
-              <li><a href="#">Eng</a></li>
+          <div class="phone"><a href="phoneto:+79266204444">8 926 <span class="phone-big">620-44-44</span></a></div>
+          <div class="language-block">
+            <a href="#" class="language lang-rus">Рус</a>
+            <ul class="language-list">
+              <li><a href="#" class="language lang-rus">Рус</a></li>
+              <li><a href="#" class="language lang-eng">Eng</a></li>
             </ul>
           </div>
         </div>
     </header>
 
-    <main class="container">
+    <main>
       <article class="promo-block mainpage">
-          <div class="promo-title">
-            Натуральные кормовые добавки для здоровья животных и птиц
+        <div class="container">
+          <div class="promo-content">
+            <p><span class="promo-title">Натуральные кормовые добавки для здоровья животных и птиц</span></p>
+            <p><a href="contacts.html" class="promo-btn">Cвяжитесь с нами</a></p>
           </div>
-          <a href="contacts.html" class="promo-btn">Cвяжитесь с нами</a>
+        </div>
       </article>
 
-      <section class="product-list">
+      <section class="product-list container">
         <ul>
           <li class="prod-poultry"><a href="poultry.html">Птицеводство</a></li>
           <li class="prod-pig"><a href="pig.html">Свиноводство</a></li>
@@ -49,7 +63,7 @@
         </ul>
       </section>
 
-      <section class="main-content clearfix">
+      <section class="main-content container clearfix">
         <div class="description">
           <h2>О Dosto® орегано</h2>
           <p>Dosto® орегано это полностью натуральный и стандартизированный продукт, имеющий в своем составе более 140 активных компонентов.</p>
@@ -64,7 +78,7 @@
         </aside>
       </section>
 
-      <section class="main-news">
+      <section class="main-news container">
         <h2>Новости компании</h2>
         <a href="news.html" class="btn">Показать все</a>
         <div class="news-block">
@@ -108,22 +122,24 @@
       </section>
     </main>
 
-    <footer class="container">
+    <footer>
       <section class="find-us clearfix">
-        <div class="map-block">
+        <div class="container">
+          <div class="map-block">
 
+          </div>
+          <article class="address-block">
+            <h5 class="branch">Главный офис</h5>
+            <p class="address">143009,<br>
+                               Моск. обл., г. Одинцово, ул. Северная, 24, офис 33</p>
+            <p class="phone">+7 926 620-44-44</p>
+            <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
+            <p><a href="contacts.html" class="btn">Задать вопрос</a></p>
+          </article>
         </div>
-        <article class="address-block">
-          <h5 class="branch">Главный офис</h5>
-          <p class="address">143009,<br>
-                             Моск. обл., г. Одинцово, ул. Северная, 24, офис 33</p>
-          <p class="phone">+7 926 620-44-44</p>
-          <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-          <p><a href="contacts.html" class="btn">Задать вопрос</a></p>
-        </article>
       </section>
 
-      <div class="footer-menu clearfix">
+      <div class="footer-menu container clearfix">
         <nav class="footer-navigation">
           <ul>
             <li><a href="about.html">О компании</a></li>
@@ -140,9 +156,9 @@
         </div>
       </div>
 
-      <p class="footer-copyright">
+      <div class="footer-copyright container">
         ООО «Грин Агро», Все права защищены.
-      </p>
+      </div>
     </footer>
 
     <section class="popup popup-feedback">

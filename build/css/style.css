@@ -3,42 +3,46 @@
 @font-face{
 font-family: 'PFDinTextPro';
 src: url('../fonts/PFDinTextPro-Regular.ttf') format('truetype');
-font-weight: normal;
+font-weight: 400;
 font-style: normal;
 }
 
 @font-face{
 font-family: 'PFDinTextPro';
 src: url('../fonts/PFDinTextPro-Medium.ttf') format('truetype');
-font-weight: medium;
+font-weight: 500;
 font-style: normal;
 }
 
 @font-face{
 font-family: 'PFDinTextPro';
 src: url('../fonts/PFDinTextPro-Bold.ttf') format('truetype');
-font-weight: bold;
+font-weight: 700;
 font-style: normal;
 }
 
 @font-face{
 font-family: 'PFDinDisplayPro';
 src: url('../fonts/PFDinDisplayPro-Reg.ttf') format('truetype');
-font-weight: normal;
+font-weight: 400;
 font-style: normal;
 }
 
 @font-face{
 font-family: 'PFDinDisplayPro';
 src: url('../fonts/PFDinDisplayPro-Bold.ttf') format('truetype');
-font-weight: bold;
+font-weight: 700;
 font-style: normal;
 }
 
 /* Базовые стили */
 
 body {
-  background-color: #fff;
+  min-width: 1170px;
+
+  background-image: url('../img/background-pattern.png');
+  background-repeat: repeat;
+  background-color: #fafafa;
   color: #000;
 
   font-family: 'PFDinTextPro', Arial, sans-serif;
@@ -87,6 +91,22 @@ h6 {
 
 table th {
   font-weight: 700;
+}
+
+/* Ссылки */
+
+body a {
+  color: #000;
+  text-decoration: none;
+}
+
+p a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+p a:visited {
+  color: #7e1b34;
 }
 
 /* Цитаты и выделения */
@@ -146,17 +166,177 @@ ul li:before  {
   content: "\2022"; /* Сам маркер */
 }
 
+/* Вспомогательные */
+
+.container {
+  margin: 0 auto;
+  /* padding: 0 15px; */
+  width: 1170px;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
 
 /* Шапка */
 
-.main-navigation {
-  font-family: 'PFDinTextPro', Arial, sans-serif;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
+body > header {
+  font-size: 0;
+  line-height: 120px;
 }
 
+/* .menu-logo,  .main-navigation, .header-tools{ */
+body > header > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu-logo {
+  margin: 0;
+  padding: 0 15px;
+  width: 166px;
+}
+
+/* Главнео меню */
+
+.main-navigation {
+  width: 685px;
+  padding: 0 15px;
+
+  /* font-family: 'PFDinTextPro', Arial, sans-serif; */
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.main-navigation a {
+  color: #000;
+  text-decoration: none;
+}
+
+.main-navigation ul {
+  margin: 0;
+  list-style: none;
+}
+
+.main-navigation li {
+  display: inline-block;
+  margin: 0;
+  margin-right: 20px;
+
+  line-height: 32px;
+}
+
+.main-navigation li:last-child {
+  margin-right: 0;
+}
+
+.main-navigation li::before {
+  display: none;
+}
+
+/* Телефон и язык */
+
+.header-tools {
+  position: relative;
+  width: 229px;
+  padding: 0 15px;
+
+  text-align: right;
+  line-height: normal;
+}
+
+.header-tools .phone {
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header-tools .phone-big {
+  font-size: 22px;
+}
+
+.header-tools .language {
+  display: inline-block;
+  color: #848484;
+  /* width: 30p */
+
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.header-tools .language::after {
+  display: inline-block;
+  content: "";
+  margin-left: 5px;
+
+  width: 13px; height: 15px;
+  background: url('../img/sprites.png') -24px -205px;
+
+  vertical-align: bottom;
+}
+
+.language-list .language::after {
+  display: none;
+}
+
+.header-tools .language.lang-rus::before {
+  display: inline-block;
+  content: "";
+  margin-right: 9px;
+
+  width: 17px; height: 12px;
+  background: url('../img/sprites.png') -24px -24px;
+}
+
+.header-tools .language.lang-eng::before {
+  display: inline-block;
+  content: "";
+  margin-right: 8px;
+
+  width: 17px; height: 12px;
+  background: url('../img/sprites.png') -24px -84px;
+}
+
+
+.header-tools .language-list {
+  display: none;
+  position: absolute;
+  right: 0;
+
+  margin: 0;
+  margin-top: 7px;
+  margin-right: 3px;
+  padding: 7px 9px;
+  padding-right: 29px;
+  width: 50px;
+
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+
+  list-style: none;
+  font-size: 14px;
+}
+
+.header-tools .language-list li {
+  margin: 0;
+}
+
+.header-tools .language-list li::before {
+  display: none;
+}
+
+.language-list .language {
+  margin-bottom: 7px;
+}
+
+.language-list li:last-child .language {
+  margin-bottom: 0px;
+}
 /* Контент */
 
 .breadcrumbs {
@@ -165,15 +345,36 @@ ul li:before  {
   line-height: 60px;
   font-weight: 700;
 }
+.promo-title::first-line  {
+  /* padding-right: 25px; */
+}
 
-.news-title h2 {
+.news-title .title-line, .promo-title .title-line{
+  /* display: inline-block;
+  padding: 0 25px;
+
   background-color: #61ab20;
-  background-color: rgba (97,171,32,.8);
+  background-color: rgba(97,171,32,.8);
   color: #fff;
 
   font-size: 30px;
   line-height: 50px;
+  text-transform: uppercase; */
+  display: inline;
+  box-decoration-break: clone;
+  background-color: #61ab20;
+  background-color: rgba(97,171,32,.8);
+  color: #fff;
+
+  padding: 12px 0;
+  box-shadow: 13px 0 0 rgba(97,171,32,.8), -13px 0 0 rgba(97,171,32,.8);
+
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 50px;
 }
+
+
 
 .news-date {
   font-family: 'PFDinDisplayPro', Verdana, sans-serif;
@@ -183,143 +384,166 @@ ul li:before  {
   text-transform: uppercase;
 }
 
+/* Главная */
+
+.promo-block.mainpage {
+  height: 430px;
+  background-color: #5e443c;
+  background-image: url('../img/main-promo.jpg');
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.promo-content {
+  width: 615px;
+  padding: 0 30px;
+  padding-top: 120px;
+}
+
+/* Новости */
+
+.news-title h2 {
+  font-size: 30px;
+  line-height: 50px;
+}
 
 .bg-livestock {
     width: 132px; height: 93px;
-    background: url('../img/css-sprites.png') -24px -2414px;
+    background: url('../img/sprites.png') -24px -2414px;
 }
 
 .bg-paultry {
     width: 136px; height: 90px;
-    background: url('../img/css-sprites.png') -24px -2276px;
+    background: url('../img/sprites.png') -24px -2276px;
 }
 
 .bg-pig {
     width: 133px; height: 85px;
-    background: url('../img/css-sprites.png') -24px -2143px;
+    background: url('../img/sprites.png') -24px -2143px;
 }
 
 .bg-feat-1 {
     width: 92px; height: 73px;
-    background: url('../img/css-sprites.png') -24px -1780px;
+    background: url('../img/sprites.png') -24px -1780px;
 }
 
 .bg-feat-2 {
     width: 73px; height: 73px;
-    background: url('../img/css-sprites.png') -24px -1538px;
+    background: url('../img/sprites.png') -24px -1538px;
 }
 
 .bg-feat-3 {
     width: 73px; height: 73px;
-    background: url('../img/css-sprites.png') -24px -1901px;
+    background: url('../img/sprites.png') -24px -1901px;
 }
 
 .bg-feat-4 {
     width: 73px; height: 73px;
-    background: url('../img/css-sprites.png') -24px -2022px;
+    background: url('../img/sprites.png') -24px -2022px;
 }
 
 .bg-feat-5 {
     width: 75px; height: 65px;
-    background: url('../img/css-sprites.png') -24px -1306px;
+    background: url('../img/sprites.png') -24px -1306px;
 }
 
 .bg-feat-6 {
     width: 73px; height: 73px;
-    background: url('../img/css-sprites.png') -24px -1659px;
+    background: url('../img/sprites.png') -24px -1659px;
 }
 
 .bg-feat-7 {
     width: 68px; height: 71px;
-    background: url('../img/css-sprites.png') -24px -1419px;
+    background: url('../img/sprites.png') -24px -1419px;
 }
 
 .bg-fb {
     width: 30px; height: 30px;
-    background: url('../img/css-sprites.png') -24px -980px;
+    background: url('../img/sprites.png') -24px -980px;
 }
 
 .bg-fb-hover {
     width: 30px; height: 30px;
-    background: url('../img/css-sprites.png') -24px -902px;
+    background: url('../img/sprites.png') -24px -902px;
 }
 
 .bg-youtube {
     width: 42px; height: 30px;
-    background: url('../img/css-sprites.png') -24px -824px;
+    background: url('../img/sprites.png') -24px -824px;
 }
 
 .bg-youtube-hover {
     width: 42px; height: 30px;
-    background: url('../img/css-sprites.png') -24px -1058px;
+    background: url('../img/sprites.png') -24px -1058px;
 }
 
 .bg-flag-rus {
     width: 17px; height: 12px;
-    background: url('../img/css-sprites.png') -24px -24px;
+    background: url('../img/sprites.png') -24px -24px;
 }
 
 .bg-flag-eng {
     width: 18px; height: 12px;
-    background: url('../img/css-sprites.png') -24px -84px;
+    background: url('../img/sprites.png') -24px -84px;
 }
 
 .bg-window-close {
     width: 21px; height: 21px;
-    background: url('../img/css-sprites.png') -24px -401px;
+    background: url('../img/sprites.png') -24px -401px;
 }
 
 .bg-lang-arrow {
     width: 13px; height: 13px;
-    background: url('../img/css-sprites.png') -24px -205px;
+    background: url('../img/sprites.png') -24px -205px;
 }
 
 .bg-lang-arrow-hover {
     width: 13px; height: 13px;
-    background: url('../img/css-sprites.png') -24px -144px;
+    background: url('../img/sprites.png') -24px -144px;
 }
 
 .bg-open-window {
     width: 37px; height: 37px;
-    background: url('../img/css-sprites.png') -24px -1221px;
+    background: url('../img/sprites.png') -24px -1221px;
 }
 
 .bg-open-window-hover {
     width: 37px; height: 37px;
-    background: url('../img/css-sprites.png') -24px -1136px;
+    background: url('../img/sprites.png') -24px -1136px;
 }
 
 .bg-open-window-small-hover {
     width: 24px; height: 24px;
-    background: url('../img/css-sprites.png') -24px -752px;
+    background: url('../img/sprites.png') -24px -752px;
 }
 
 .bg-open-window-small {
     width: 24px; height: 24px;
-    background: url('../img/css-sprites.png') -24px -680px;
+    background: url('../img/sprites.png') -24px -680px;
 }
 
 .bg-window-close-hover {
     width: 21px; height: 21px;
-    background: url('../img/css-sprites.png') -24px -470px;
+    background: url('../img/sprites.png') -24px -470px;
 }
 
 .bg-map-marker {
     width: 17px; height: 23px;
-    background: url('../img/css-sprites.png') -24px -609px;
+    background: url('../img/sprites.png') -24px -609px;
 }
 
 .bg-mail {
     width: 21px; height: 19px;
-    background: url('../img/css-sprites.png') -24px -266px;
+    background: url('../img/sprites.png') -24px -266px;
 }
 
 .bg-phone {
     width: 19px; height: 22px;
-    background: url('../img/css-sprites.png') -24px -539px;
+    background: url('../img/sprites.png') -24px -539px;
 }
 
 .bg-timetable {
     width: 20px; height: 20px;
-    background: url('../img/css-sprites.png') -24px -333px;
+    background: url('../img/sprites.png') -24px -333px;
 }
