@@ -54,6 +54,7 @@ body {
 /* Заголовки */
 
 h1, h2, h3, h4, h5 {
+  margin: 0;
   font-family: 'PFDinDisplayPro', Verdana, sans-serif;
   font-size: 28px;
   line-height: 60px;
@@ -93,6 +94,14 @@ table th {
   font-weight: 700;
 }
 
+/* Текстовые стили */
+
+/* Заголовки */
+
+.text-content h2 {
+  margin-bottom: 10px;
+}
+
 /* Ссылки */
 
 body a {
@@ -100,28 +109,39 @@ body a {
   text-decoration: none;
 }
 
-p a {
+.text-content a {
   color: inherit;
   text-decoration: underline;
 }
 
-p a:visited {
+.text-content a:visited {
   color: #7e1b34;
+}
+
+/* Абзацы */
+
+body p {
+  margin: 0;
+}
+
+.text-content p {
+  /* margin: 10px 0; */
+  margin-bottom: 10px;
 }
 
 /* Цитаты и выделения */
 
-p mark {
+.text-content mark {
   font-size: 18px;
   line-height: 24px;
 }
 
-p blockquote {
+.text-content blockquote {
   font-size: 18px;
   line-height: 24px;
 }
 
-blockquote cite {
+.text-content blockquote cite {
   color: #9a9a9a;
 
   font-size: 14px;
@@ -132,21 +152,31 @@ blockquote cite {
 
 /* Списки */
 
-ol, ul {
+body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body li {
+  margin: 0;
+}
+
+.text-content ol, .text-content ul {
   padding: 0; /* Удаляем  установленное по умолчанию левое поле*/
   list-style: none; /* Отменяем нумерацию установленную по умолчанию */
 }
 
-ol {
+.text-content ol {
   counter-reset: li; /* Инициализируем счетчик */
 }
 
-ol li, ul li {
+.text-content li {
   position: relative; /* Создаем контекст для позиционирования элементов */
   margin-left: 50px; /* Даем каждому элементу списка отступ слева, что бы освободить пространство для нумерации */
 }
 
-ol li:before, ul li:before  {
+.text-content li:before  {
   position: absolute;
   left: -50px;
   width: 30px;
@@ -156,21 +186,91 @@ ol li:before, ul li:before  {
   text-align: right;
 }
 
-ol li:before  {
+.text-content ol li:before  {
   content: counter(li) "."; /* В качестве данных используем счетчик */
   counter-increment: li; /* Увеличиваем значение счетчика на 1 */
 }
 
-ul li:before  {
+.text-content ul li:before  {
   width: 25px;
   content: "\2022"; /* Сам маркер */
+}
+
+/* Кнопки */
+
+a.btn {
+  display: inline-block;
+  padding: 8px 30px;
+  border: none;
+  border-radius: 20px;
+
+  background-color: #7fac17;
+  color: #fff;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+a.btn:visited {
+  color: #fff;
+}
+
+.promo-btn {
+  display: inline-block;
+  padding: 18px 30px;
+  margin-top: 25px;
+
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+
+  font-family: 'PFDinTextPro', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.social-btn {
+  display: inline-block;
+  width: 30px;
+  line-height: 30px;
+}
+
+.social-btn.social-fb {
+  background: url('../img/sprites.png') -24px -980px;
+  text-indent: 9999px;
+}
+
+.social-btn.social-yt {
+  width: 42px;
+  background: url('../img/sprites.png') -24px -824px;
+  text-indent: 9999px;
+}
+
+/* Меню */
+
+.main-navigation, .footer-navigation {
+  padding: 0 15px;
+
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.main-navigation li,
+.footer-navigation li {
+  display: inline-block;
+
+  line-height: 32px;
+  vertical-align: baseline;
 }
 
 /* Вспомогательные */
 
 .container {
+  box-sizing: border-box;
   margin: 0 auto;
-  /* padding: 0 15px; */
   width: 1170px;
 }
 
@@ -184,10 +284,9 @@ ul li:before  {
 
 body > header {
   font-size: 0;
-  line-height: 120px;
+  line-height: 123px;
 }
 
-/* .menu-logo,  .main-navigation, .header-tools{ */
 body > header > * {
   display: inline-block;
   vertical-align: middle;
@@ -202,47 +301,25 @@ body > header > * {
 /* Главнео меню */
 
 .main-navigation {
-  width: 685px;
-  padding: 0 15px;
+  width: 680px;
 
-  /* font-family: 'PFDinTextPro', Arial, sans-serif; */
   font-size: 16px;
-  font-weight: 500;
-  text-transform: uppercase;
   text-align: right;
 }
 
-.main-navigation a {
-  color: #000;
-  text-decoration: none;
-}
-
-.main-navigation ul {
-  margin: 0;
-  list-style: none;
-}
-
 .main-navigation li {
-  display: inline-block;
-  margin: 0;
   margin-right: 20px;
-
-  line-height: 32px;
 }
 
 .main-navigation li:last-child {
   margin-right: 0;
 }
 
-.main-navigation li::before {
-  display: none;
-}
-
 /* Телефон и язык */
 
 .header-tools {
   position: relative;
-  width: 229px;
+  width: 234px;
   padding: 0 15px;
 
   text-align: right;
@@ -263,10 +340,10 @@ body > header > * {
 .header-tools .language {
   display: inline-block;
   color: #848484;
-  /* width: 30p */
 
   font-size: 14px;
   font-weight: normal;
+  vertical-align: baseline;
 }
 
 .header-tools .language::after {
@@ -290,18 +367,16 @@ body > header > * {
   margin-right: 9px;
 
   width: 17px; height: 12px;
+  vertical-align: baseline;
+}
+
+.header-tools .language.lang-rus::before {
   background: url('../img/sprites.png') -24px -24px;
 }
 
 .header-tools .language.lang-eng::before {
-  display: inline-block;
-  content: "";
-  margin-right: 8px;
-
-  width: 17px; height: 12px;
   background: url('../img/sprites.png') -24px -84px;
 }
-
 
 .header-tools .language-list {
   display: none;
@@ -322,14 +397,6 @@ body > header > * {
   font-size: 14px;
 }
 
-.header-tools .language-list li {
-  margin: 0;
-}
-
-.header-tools .language-list li::before {
-  display: none;
-}
-
 .language-list .language {
   margin-bottom: 7px;
 }
@@ -337,6 +404,116 @@ body > header > * {
 .language-list li:last-child .language {
   margin-bottom: 0px;
 }
+
+/* Футер */
+
+.find-us {
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid #7fac17;
+}
+
+.find-us .map-block {
+  position: relative;
+  height: 320px;
+
+  background-color: #ddeac1;
+  background-image: url('../img/footer-map+.jpg');
+  background-position: calc(50% - 170px) center;
+
+  /* background-size: 100% auto; */
+
+  z-index: 1;
+}
+
+.find-us .address-block {
+  position: absolute;
+  height: 320px;
+  top: 0;
+  left: 50%;
+  margin-left: 115px;
+  width: 50%;
+
+  background-color: #fff;
+  z-index: 2;
+}
+
+.address-block .container.text-content {
+  width: 415px;
+  margin: 0;
+  padding: 25px 40px;
+  padding-right: 15px;
+}
+
+.address-block .container.text-content .btn {
+  margin-top: 40px;
+}
+
+.find-us .map-block {
+}
+
+/* Меню в футере */
+
+.footer-menu {
+  height: 90px;
+}
+
+.footer-navigation {
+  float: left;
+  width: 670px;
+  padding-top: 30px;
+
+  font-size: 14px;
+}
+
+.footer-navigation li {
+  margin-left: 40px;
+}
+
+.footer-navigation li:first-child {
+  margin-left: 0;
+}
+
+/* Социалка в футере */
+
+.footer-social {
+  float: right;
+  width: 440px;
+  padding: 0 15px;
+
+  line-height: 90px;
+  text-align: right;
+}
+
+.footer-social .social-btn {
+  margin-left: 25px;
+
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Копирайт в футере */
+
+.footer-copyright {
+  background-color: #f4f4f4;
+}
+
+.footer-copyright p {
+  margin: 0;
+  padding: 35px 15px;
+
+  font-family: 'PFDinTextPro', Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Попапы */
+
+.popup {
+  position: absolute;
+  display: none;
+}
+
 /* Контент */
 
 .breadcrumbs {
@@ -345,50 +522,275 @@ body > header > * {
   line-height: 60px;
   font-weight: 700;
 }
-.promo-title::first-line  {
-  /* padding-right: 25px; */
+
+.text-content {
+  padding: 0 15px;
 }
 
-.news-title .title-line, .promo-title .title-line{
-  display: inline-block;
-  padding: 0 25px;
-  /* padding-right: 10px; */
+/* Заголовки промо и новостей */
 
+.news-title .title-caption, .promo-title .title-caption{
+  display: inline;
+  box-decoration-break: clone;
   background-color: #61ab20;
   background-color: rgba(97,171,32,.8);
   color: #fff;
 
+  padding: 8px 0;
+  box-shadow: 25px 0 0 rgba(97,171,32,.8), -25px 0 0 rgba(97,171,32,.8);
+
+  text-transform: uppercase;
   font-size: 30px;
   line-height: 50px;
-  /* white-space: pre-wrap; */
-  /* vertical-align: middle; */
-  text-transform: uppercase;
+  font-weight: 500;
 }
 
-.news-date {
-  font-family: 'PFDinDisplayPro', Verdana, sans-serif;
-  font-size: 14px;
-  line-height: 60px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
+/* Промо-блок */
 
-/* Главная */
-
-.promo-block.mainpage {
+.promo-block {
   height: 430px;
-  background-color: #5e443c;
-  background-image: url('../img/main-promo.jpg');
+  background-color: lime;
   background-position: center;
   background-size: auto 100%;
   background-repeat: no-repeat;
 }
 
 .promo-content {
-  width: 615px;
-  padding: 0 30px;
+  width: 585px;
+  padding: 0 15px;
+  padding-left: 110px;
   padding-top: 120px;
 }
+
+.promo-title {
+  margin: 0;
+  padding: 0 25px;
+}
+
+/* Главная */
+
+.mainpage .promo-block {
+  background-color: #5e443c;
+  background-image: url('../img/main-promo.jpg');
+}
+
+/* Категории товаров на главной */
+
+.product-list {
+  padding: 90px 15px;
+}
+
+.product-list li {
+  display: inline;
+}
+
+.product-list .product-item {
+  position: relative;
+  display: block;
+  float:left;
+  height: 50px;
+  width: 358px;
+  margin-right: 30px;
+  padding-top: 145px;
+
+  border: 1px solid #e6e6e6;
+  border-bottom: 2px solid #7fac17;
+
+  text-align: center;
+}
+
+/* Стрелка открытия окна */
+
+.product-list .product-item::after {
+  display: block;
+  content: "";
+  position: absolute;
+
+  width: 37px;
+  height: 37px;
+  top: 80px;
+  right: 16px;
+
+  background: url('../img/sprites.png') -24px -1221px;
+}
+
+/* Рисунки категорий */
+
+.product-list .product-item.product-poultry::before {
+  display: block;
+  content: "";
+  position: absolute;
+
+  left: 112px;
+  top: 25px;
+  width: 136px;
+  height: 90px;
+
+  background: url('../img/sprites.png') -24px -2276px;
+}
+
+.product-list .product-item.product-pig::before {
+  display: block;
+  content: "";
+  position: absolute;
+
+  left: 116px;
+  top: 32px;
+  width: 133px;
+  height: 85px;
+
+  background: url('../img/sprites.png') -24px -2143px;
+}
+
+.product-list .product-item.product-livestock::before {
+  display: block;
+  content: "";
+  position: absolute;
+
+  left: 113px;
+  top: 24px;
+  width: 132px;
+  height: 93px;
+
+  background: url('../img/sprites.png') -24px -2414px;
+}
+
+.product-item .product-caption {
+  color: #7fac17;
+  font-family: 'PFDinDisplayPro', Verdana, sans-serif;
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.product-list .product-item:last-child {
+  margin-right: 0;
+}
+
+/* Текст на главной */
+
+.main-content {
+  padding: 70px 0;
+  padding-bottom: 90px;
+  background-color: #f4f4f4;
+}
+
+.mainpage .main-content .text-content {
+  float:left;
+  width: 460px;
+  padding: 0 15px;
+}
+
+.mainpage .main-content .text-content p {
+  margin-bottom: 25px;
+}
+
+.mainpage .text-content .btn {
+  margin-top: 15px;
+}
+
+/* Блок видео */
+
+.video-block {
+  float: right;
+  width: 555px;
+  padding: 0 15px;
+  /* padding-top: 10px; */
+}
+
+.video-block h5 {
+  margin-bottom: 10px;
+}
+
+.video-block .video-src {
+  height: 310px;
+  background-color: #000;
+
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Новости на главной */
+
+.main-news {
+  padding: 90px 15px;
+  padding-bottom: 110px;
+}
+
+.main-news .title {
+  position: relative;
+}
+
+.main-news .title  h2{
+  display: inline-block;
+}
+
+.main-news .title .btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 24px;
+  margin: auto;
+  margin-left: 35px;
+}
+
+.main-news .news-block {
+  margin-top: 25px;
+}
+
+.main-news .news-item {
+  float: left;
+  width: 262px;
+  height: 310px;
+  margin-right: 28px;
+  border: 1px solid #e6e6e6;
+
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.main-news .news-date {
+  margin-bottom: 8px;
+
+  font-family: 'PFDinDisplayPro', Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.main-news .news-item:last-child {
+  margin-right: 0;
+}
+
+.news-item .news-image {
+  width: 262px;
+  height: 142px;
+}
+
+.news-image img {
+  /* width: 260px;
+  height: auto; */
+}
+
+.news-item .news-content {
+  position: relative;
+  min-height: 130px;
+  padding: 20px;
+}
+
+.news-item .news-content::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  right: 13px;
+  bottom: 14px;
+
+  background: url('../img/sprites.png') -24px -680px;
+}
+
 
 /* Новости */
 
@@ -396,6 +798,8 @@ body > header > * {
   font-size: 30px;
   line-height: 50px;
 }
+
+/* Спрайты */
 
 .bg-livestock {
     width: 132px; height: 93px;

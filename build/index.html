@@ -7,18 +7,6 @@
 <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="mainpage">
-
-    <!-- <div class="cont">
-      <div class="el">
-        <span>1</span>
-      </div>
-      <div class="el">
-        <span>2</span>
-      </div>
-      <div class="el">
-        <span>3</span>
-      </div>
-    </div> -->
     <header class="container clearfix">
         <h1 class="menu-logo">
           <a href="index.html"><img src="img/header-logo.png" alt="Грин Агро" width="166px" height="60px"></a>
@@ -46,54 +34,60 @@
     </header>
 
     <main>
-      <article class="promo-block mainpage">
+      <article class="promo-block">
         <div class="container">
           <div class="promo-content">
-            <p><span class="promo-title">Натуральные кормовые добавки для здоровья животных и птиц</span></p>
+            <p class="promo-title"><span class="title-caption">Натуральные кормовые добавки для здоровья животных и птиц</span></p>
             <p><a href="contacts.html" class="promo-btn">Cвяжитесь с нами</a></p>
           </div>
         </div>
       </article>
 
-      <section class="product-list container">
-        <ul>
-          <li class="prod-poultry"><a href="poultry.html">Птицеводство</a></li>
-          <li class="prod-pig"><a href="pig.html">Свиноводство</a></li>
-          <li class="prod-livestock"><a href="livestock.html">Животноводство</a></li>
-        </ul>
+      <section class="product-list container clearfix">
+        <a href="poultry.html" title="Птицеводство" class="product-item product-poultry" title="Птицеводство"><span class="product-caption">Птицеводство</span></a>
+        <a href="pig.html" title="Свиноводство" class="product-item product-pig" title="Свиноводство"><span class="product-caption">Свиноводство</span></a>
+        <a href="livestock.html" title="Животноводство" class="product-item product-livestock" title="Животноводство"><span class="product-caption">Животноводство</span></a>
       </section>
 
-      <section class="main-content container clearfix">
-        <div class="description">
-          <h2>О Dosto® орегано</h2>
-          <p>Dosto® орегано это полностью натуральный и стандартизированный продукт, имеющий в своем составе более 140 активных компонентов.</p>
-          <p>Dosto® орегано это самая серьезная альтернатива антибиотикам из всех растительных продуктов на сегодня.</p>
-          <a href="oregano.html" class="btn">Узнать больше</a>
-        </div>
-        <aside class="video-block">
-          <h5>Грин Агро - официальный дистрибьютер Компании Dostofarm</h5>
-          <div class="video-src">
-
+      <section class="main-content">
+        <div class="container clearfix">
+          <div class="text-content">
+            <h2>О Dosto® орегано</h2>
+            <p>Dosto® орегано это полностью натуральный и стандартизированный продукт, имеющий в своем составе более 140 активных компонентов.</p>
+            <p>Dosto® орегано это самая серьезная альтернатива антибиотикам из всех растительных продуктов на сегодня.</p>
+            <a href="oregano.html" class="btn">Узнать больше</a>
           </div>
-        </aside>
+          <aside class="video-block">
+            <h5>Грин Агро - официальный дистрибьютер Компании Dostofarm</h5>
+            <div class="video-src">
+              <iframe width="555" height="310" src="https://www.youtube.com/embed/QYXffErw4Cc" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+            </div>
+          </aside>
+        </div>
       </section>
 
       <section class="main-news container">
-        <h2>Новости компании</h2>
-        <a href="news.html" class="btn">Показать все</a>
-        <div class="news-block">
+        <div class="title">
+          <h2>Новости компании</h2>
+          <a href="news.html" class="btn">Показать все</a>
+        </div>
+        <div class="news-block clearfix">
           <article class="news-item">
             <a href="news_1.html">
-              <img class="news-image" src="img\news-1.jpg" alt="Новая линейка кормов" width="264" height="142">
+              <div class="news-image">
+                <img src="img\news-1.jpg" alt="Новая линейка кормов" width="262" height="142">
+              </div>
               <div class="news-content">
-                <p><span class="news-date">12 ноября 2017</p>
+                <p class="news-date">12 ноября 2017</p>
                 <p>Выпущена новая линейка кормов для крупного рогатого скота</p>
               </div>
             </a>
           </article>
           <article class="news-item">
             <a href="news_2.html">
-              <img class="news-image" src="img\news-2.png" alt="Награда Innovative through research" width="264" height="142">
+              <div class="news-image">
+                <img src="img\news-2.png" alt="Награда Innovative through research" width="262" height="142">
+              </div>
               <div class="news-content">
                 <p class="news-date">5 июля 2017</p>
                 <p>Компания «Грин Агро» получила награду "Innovative through research"</p>
@@ -102,7 +96,9 @@
           </article>
           <article class="news-item">
             <a href="news_3.html">
-              <img class="news-image" src="img\news-3.jpg" alt="Филиал в Самаре" width="264" height="142">
+              <div class="news-image">
+                <img src="img\news-3.jpg" alt="Филиал в Самаре" width="262" height="142">
+              </div>
               <div class="news-content">
                 <p class="news-date">2 января 2017</p>
                 <p>Открыт новый филиал в городе Самара</p>
@@ -111,7 +107,9 @@
           </article>
           <article class="news-item">
             <a href="news_4.html">
-              <img class="news-image" src="img\news-4.jpg" alt="Выставка Nexpo" width="264" height="142">
+              <div class="news-image">
+                <img src="img\news-4.jpg" alt="Выставка Nexpo" width="262" height="142">
+              </div>
               <div class="news-content">
                 <p class="news-date">18 ноября 2016</p>
                 <p>Компания «Грин Агро» приняла участие в выставке сельскохозяйственных достижений “Nexpo”</p>
@@ -123,20 +121,20 @@
     </main>
 
     <footer>
-      <section class="find-us clearfix">
-        <div class="container">
-          <div class="map-block">
+      <section class="find-us">
+        <div class="map-block">
 
-          </div>
-          <article class="address-block">
+        </div>
+        <article class="address-block">
+          <div class="container text-content">
             <h5 class="branch">Главный офис</h5>
             <p class="address">143009,<br>
                                Моск. обл., г. Одинцово, ул. Северная, 24, офис 33</p>
             <p class="phone">+7 926 620-44-44</p>
             <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-            <p><a href="contacts.html" class="btn">Задать вопрос</a></p>
-          </article>
-        </div>
+            <a href="contacts.html" class="btn">Задать вопрос</a>
+          </div>
+        </article>
       </section>
 
       <div class="footer-menu container clearfix">
@@ -149,15 +147,17 @@
           </ul>
         </nav>
         <div class="footer-social">
-          <ul>
-            <li><a href="https://facebook.com" class="social-btn social-fb">Facebook</a></li>
-            <li><a href="https://youtube.com" class="social-btn social-yt">Youtube</a></li>
-          </ul>
+          <a href="https://facebook.com" class="social-btn social-fb">Facebook</a>
+          <a href="https://youtube.com" class="social-btn social-yt">Youtube</a>
         </div>
       </div>
 
-      <div class="footer-copyright container">
-        ООО «Грин Агро», Все права защищены.
+      <div class="footer-copyright">
+        <div class="container">
+          <p>
+            ООО «Грин Агро», Все права защищены.
+          </p>
+        </div>
       </div>
     </footer>
 
