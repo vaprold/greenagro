@@ -1,38 +1,63 @@
 /* Шрифты */
 
-@font-face{
-font-family: 'PFDinTextPro';
-src: url('../fonts/PFDinTextPro-Regular.ttf') format('truetype');
-font-weight: 400;
-font-style: normal;
+@font-face {
+  font-family: "PFDinTextPro";
+  font-style: normal;
+  font-weight: 400;
+  src: local('PF DinText Pro'),
+  url("../fonts/PFDinTextPro-Regular.woff2") format("woff2"), /* Modern Browsers */
+  url("../fonts/PFDinTextPro-Regular.woff") format("woff"), /* Modern Browsers */
+  url("../fonts/PFDinTextPro-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+  url("../fonts/PFDinTextPro-Regular.eot") format('eot'), /* IE9 Compat Modes */
+  url("../fonts/PFDinTextPro-Regular.eot?#iefix") format("embedded-opentype"); /* IE6-IE8 */
 }
 
-@font-face{
-font-family: 'PFDinTextPro';
-src: url('../fonts/PFDinTextPro-Medium.ttf') format('truetype');
-font-weight: 500;
-font-style: normal;
+@font-face {
+  font-family: "PFDinTextPro";
+  font-style: normal;
+  font-weight: 500;
+  src: local('PF DinText Pro'),
+  url("../fonts/PFDinTextPro-Medium.woff2") format("woff2"), /* Modern Browsers */
+  url("../fonts/PFDinTextPro-Medium.woff") format("woff"), /* Modern Browsers */
+  url("../fonts/PFDinTextPro-Medium.ttf") format("truetype"), /* Safari, Android, iOS */
+  url("../fonts/PFDinTextPro-Medium.eot") format('eot'), /* IE9 Compat Modes */
+  url("../fonts/PFDinTextPro-Medium.eot?#iefix") format("embedded-opentype"); /* IE6-IE8 */
 }
 
-@font-face{
-font-family: 'PFDinTextPro';
-src: url('../fonts/PFDinTextPro-Bold.ttf') format('truetype');
-font-weight: 700;
-font-style: normal;
+@font-face {
+  font-family: "PFDinTextPro";
+  font-style: normal;
+  font-weight: 700;
+  src: local('PF DinText Pro'),
+  url("../fonts/PFDinTextPro-Bold.woff2") format("woff2"), /* Modern Browsers */
+  url("../fonts/PFDinTextPro-Bold.woff") format("woff"), /* Modern Browsers */
+  url("../fonts/PFDinTextPro-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+  url("../fonts/PFDinTextPro-Bold.eot") format('eot'), /* IE9 Compat Modes */
+  url("../fonts/PFDinTextPro-Bold.eot?#iefix") format("embedded-opentype"); /* IE6-IE8 */
 }
 
-@font-face{
-font-family: 'PFDinDisplayPro';
-src: url('../fonts/PFDinDisplayPro-Reg.ttf') format('truetype');
-font-weight: 400;
-font-style: normal;
+@font-face {
+  font-family: "PFDinDisplayPro";
+  font-style: normal;
+  font-weight: 400;
+  src: local('PF DinDisplay Pro'),
+  url("../fonts/PFDinDisplayPro-Regular.woff2") format("woff2"), /* Modern Browsers */
+  url("../fonts/PFDinDisplayPro-Regular.woff") format("woff"), /* Modern Browsers */
+  url("../fonts/PFDinDisplayPro-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+  url("../fonts/PFDinDisplayPro-Regular.eot") format('eot'), /* IE9 Compat Modes */
+  url("../fonts/PFDinDisplayPro-Regular.eot?#iefix") format("embedded-opentype"); /* IE6-IE8 */
 }
 
-@font-face{
-font-family: 'PFDinDisplayPro';
-src: url('../fonts/PFDinDisplayPro-Bold.ttf') format('truetype');
-font-weight: 700;
-font-style: normal;
+@font-face {
+  font-family: "PFDinDisplayPro";
+  font-style: normal;
+  font-weight: 700;
+  src: local('PF DinDisplay Pro'),
+  url("../fonts/PFDinDisplayPro-Bold.woff2") format("woff2"), /* Modern Browsers */
+  url("../fonts/PFDinDisplayPro-Bold.woff") format("woff"), /* Modern Browsers */
+  url("../fonts/PFDinDisplayPro-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+  url("../fonts/PFDinDisplayPro-Bold.eot") format('eot'), /* IE9 Compat Modes */
+  url("../fonts/PFDinDisplayPro-Bold.eot?#iefix") format("embedded-opentype"); /* IE6-IE8 */
 }
 
 /* Базовые стили */
@@ -104,21 +129,21 @@ table th {
 
 /* Ссылки */
 
-body a {
+body a:not(.btn) {
   color: #000;
   text-decoration: none;
 }
 
-.text-content a {
+.text-content a:not(.btn) {
   color: inherit;
   text-decoration: underline;
 }
 
-.text-content a:hover {
+.text-content a:not(.btn):hover {
   color: #7fac17;
 }
 
-.text-content a:visited {
+.text-content a:not(.btn):visited {
   color: #7e1b34;
 }
 
@@ -210,19 +235,20 @@ body li {
 
   background-color: #7fac17;
   color: #fff;
+  text-decoration: none;
 }
 
 .btn:hover {
   background-color: #93bf2c;
 }
 
-a.btn {
-  text-decoration: none;
+/* a.btn {
+  color: #fff;
 }
 
 a.btn:visited {
   color: #fff;
-}
+} */
 
 .promo-btn {
   display: inline-block;
@@ -253,7 +279,7 @@ a.btn:visited {
 
 .social-btn.social-fb {
   background: url('../img/sprites.png') -24px -980px;
-  text-indent: 9999px;
+  text-indent: -9999px;
 }
 
 .social-btn.social-fb:hover {
@@ -263,7 +289,7 @@ a.btn:visited {
 .social-btn.social-yt {
   width: 42px;
   background: url('../img/sprites.png') -24px -824px;
-  text-indent: 9999px;
+  text-indent: -9999px;
 }
 
 .social-btn.social-yt:hover {
@@ -755,9 +781,8 @@ body > header > * {
 
 .video-block {
   float: right;
-  width: 555px;
+  width: 525px;
   padding: 0 15px;
-  /* padding-top: 10px; */
 }
 
 .video-block h5 {
@@ -765,8 +790,7 @@ body > header > * {
 }
 
 .video-block .video-src {
-  height: 310px;
-  background-color: #000;
+  height: 328px;
 
   font-size: 0;
   line-height: 0;
