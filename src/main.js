@@ -1,3 +1,6 @@
+var closeBtns = document.querySelectorAll(".btn-close");
+var popup = document.querySelector(".popup");
+
 function initMap() {
   var msk = {lat: 55.709623, lng:  37.593688};
   var office = {lat: 55.678803, lng: 37.253474};
@@ -23,3 +26,10 @@ function initMap() {
 }
 
 window.initMap = initMap;
+
+for (var i = 0; i < closeBtns.length; i++)  {
+    closeBtns[i].addEventListener("click", function (event) {
+      event.preventDefault();
+      popup.classList.remove('popup-shown');
+      });
+}

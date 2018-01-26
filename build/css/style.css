@@ -78,7 +78,8 @@ body {
 
 /* Заголовки */
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5,
+.feedback-form .form-title {
   margin: 0;
   font-family: 'PFDinDisplayPro', Verdana, sans-serif;
   font-size: 28px;
@@ -229,17 +230,41 @@ body li {
 
 .btn {
   display: inline-block;
-  padding: 8px 30px;
+  padding: 6px 30px;
   border: none;
   border-radius: 20px;
 
   background-color: #7fac17;
   color: #fff;
   text-decoration: none;
+
+  font-family: 'PFDinTextPro', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.btn.btn-close {
+  background-color: #a5a0a1;
 }
 
 .btn:hover {
   background-color: #93bf2c;
+}
+
+.btn.btn-close:hover {
+  background-color: #b7b3b4;
+}
+
+.btn-close:not(.btn) {
+  width: 21px;
+  height: 21px;
+  border: none;
+  background: url('../img/sprites.png') -24px -401px;
+  text-indent: -9999px;
+}
+
+.btn-close:not(.btn):hover {
+  background: url('../img/sprites.png') -24px -470px;
 }
 
 .promo-btn {
@@ -286,6 +311,25 @@ body li {
 
 .social-btn.social-yt:hover {
   background: url('../img/sprites.png') -24px -1058px;
+}
+
+/* Инпуты */
+
+.inputbox {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  margin-bottom: 5px;
+
+  border: 1px solid #e6e6e6;
+  min-width: 200px;
+
+  font-family: 'PFDinTextPro', Arial, sans-serif;
+  line-height: 24px;
+}
+
+.inputbox::placeholder {
+  color: #000;
 }
 
 /* Меню */
@@ -581,8 +625,75 @@ body > header > * {
 /* Попапы */
 
 .popup {
-  position: absolute;
+  position: fixed;
   display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 2;
+}
+
+.popup-shown {
+  display: block;
+}
+
+.popup-feedback .feedback-form {
+  position: absolute;
+  padding: 60px 100px;
+  width: 550px;
+  height: 476px;
+  left: 0;
+  right: 0;
+  margin: 10% auto;
+
+  background-color: #f4f4f4;
+  border: 2px solid #90bb40;
+}
+
+.feedback-form .form-title {
+  margin-bottom: 15px;
+}
+
+.feedback-form .inputbox {
+  display: block;
+  width: 100%;
+}
+
+.feedback-form textarea.inputbox {
+  margin-bottom: 14px;
+}
+
+.feedback-form .btn:not(.btn-close) {
+  float: left;
+  margin-right: 25px;
+}
+
+.feedback-form .btn.btn-close {
+  float: right;
+}
+
+.feedback-form .btn-close {
+  display: none;
+}
+
+.popup-feedback .btn-close {
+  display: block;
+}
+
+.feedback-form .personal {
+  float: left;
+  line-height: 40px;
+  color: #9a9a9a;
+}
+
+.popup .btn-close:not(.btn) {
+  position: absolute;
+  top: 23px;
+  right: 30px;
 }
 
 /* Контент */
