@@ -30,7 +30,7 @@ window.initMap = initMap;
 for (var i = 0; i < closeBtns.length; i++)  {
     closeBtns[i].addEventListener("click", function (event) {
       event.preventDefault();
-      popup.classList.remove('popup-shown');
+      popup.classList.remove("popup-shown");
       });
 }
 
@@ -40,4 +40,18 @@ var showPopup = function() {
   popup.classList.add ("popup-shown");
 }
 
-var popupTimer = setTimeout(showPopup, 1000);
+var runDev = function() {
+  debugger;
+  var links = document.querySelectorAll("body>:not(.popup-dev) a");
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", function (event) {
+      event.preventDefault();
+    })
+  }
+
+  window.addEventListener("load", function() {
+    var popupTimer = setTimeout(showPopup, 500);
+  });
+}
+
+runDev();
