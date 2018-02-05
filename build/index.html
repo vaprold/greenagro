@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Компания Грин Агро</title>
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="mainpage">
     <header class="container clearfix">
@@ -22,7 +22,7 @@
         </nav>
 
         <div class="header-tools">
-          <div class="phone"><a href="phoneto:+79266204444">8 926 <span class="phone-big">620-44-44</span></a></div>
+          <div class="phone"><a href="tel:+79266204444">8 926 <span class="phone-big">620-44-44</span></a></div>
           <div class="language-block">
             <a href="#" class="language lang-rus">Рус</a>
             <ul class="language-list">
@@ -161,8 +161,8 @@
       </div>
     </footer>
 
-    <section class="popup popup-feedback popup-shown">
-      <form class="feedback-form">
+    <section class="popup popup-feedback">
+      <form class="feedback-form popup-container">
         <div class="form-title">Задать вопрос</div>
         <input type="text" name="name" id="feedback_name" placeholder="Пожалуйста, представьтесь!" class="inputbox">
         <input type="email" name="email" id="feedback_mail" placeholder="На какой адрес прислать ответ?" class="inputbox">
@@ -175,6 +175,24 @@
         </div>
         <a href="#" class="btn-close">Закрыть окно</a>
       </form>
+    </section>
+
+    <section class="popup popup-dev">
+      <div class="popup-container text-content">
+        <h2>Сайт в разработке!</h2>
+        <p>Сожалеем, что заставляем вас читать эти строки, но наш новый сайт ещё не готов!</p>
+        <p>Мы ответим на любые ваши вопросы по <a href="tel:+79266204444">телефону</a>, либо сделаем это письменно,
+          если вы <a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">напишете нам</a> письмо.<br>Ну, а если
+          электронному общению вы предпочитаете личное, то в <a href="https://yandex.ru/maps/-/CBeJFIhNDB">нашем офисе</a>
+          мы ещё и предложим вам чашечку чая или кофе!</p>
+        <div class="popup-contacts clearfix">
+          <span class="popup-contacts__i phone"><a href="tel:+79266204444">+7 926 620-44-44</a></span>
+          <span class="popup-contacts__i mail"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></span>
+          <span class="popup-contacts__i address"><a href="https://yandex.ru/maps/-/CBeJFIhNDB">143009, Моск. обл., г. Одинцово,<br>
+                                                                          ул. Северная, 24, офис 33</a></span>
+
+        </div>
+      </div>
     </section>
 
     <script src="js/main.js" charset="utf-8"></script>

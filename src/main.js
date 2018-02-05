@@ -33,3 +33,11 @@ for (var i = 0; i < closeBtns.length; i++)  {
       popup.classList.remove('popup-shown');
       });
 }
+
+var showPopup = function() {
+  var popup = document.querySelector(".popup-dev");
+
+  popup.classList.add ("popup-shown");
+}
+
+var popupTimer = setTimeout(showPopup, 1000);
