@@ -342,10 +342,12 @@ body li {
 }
 
 .menu li {
+  position: relative;
   display: inline-block;
+  line-height: normal;
 }
 
-.menu a {
+.menu .menu-element__i {
   position: relative;
   display: inline-block;
   padding: 0 10px;
@@ -354,17 +356,62 @@ body li {
   vertical-align: baseline;
 }
 
-.menu a:hover {
+/* Всплывающее меню */
+
+.menu .submenu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  text-align: left;
+  z-index: 1;
+}
+
+.menu .submenu li {
+  display: block;
+  max-width: 250px;
+  word-wrap: break-word;
+
+  border-left: 1px solid #ececec;
+  border-right: 1px solid #ececec;
+}
+
+.menu .submenu li:first-child {
+  border-top: 1px solid #ececec;
+}
+
+.menu .submenu li:last-child {
+  border-bottom: 1px solid #ececec;
+}
+
+.menu .submenu .menu-element__i {
+  display: block;
+  padding: 8px 24px;
+}
+
+/* Всплывающее подменю */
+
+.menu .submenu .submenu {
+  top: 0;
+  margin-left: 100%;
+}
+
+/* Оживление меню */
+
+.menu li:hover > .menu-element__i {
   color: #fff;
   background-color: #7fac17;
 }
 
-.menu li.active a {
+.menu li:hover > .submenu {
+  display: block;
+}
+
+.menu li.active > .menu-element__i {
   color: #7fac17;
   background-color: none;
 }
 
-.menu li.active a::after {
+.menu li.active > .menu-element__i::after {
   position: absolute;
   content: "";
   height: 2px;
@@ -375,12 +422,15 @@ body li {
   background-color: #7fac17;
 }
 
-.menu li.active a:hover {
+.menu li.active:hover > .menu-element__i {
   color: #7fac17;
   background: none;
   cursor: default;
 }
 
+.menu .menu-element__i:not(a) {
+  cursor: default;
+}
 /* Вспомогательные */
 
 .container {
@@ -420,10 +470,6 @@ body > header > * {
 
   font-size: 16px;
   text-align: right;
-}
-
-.menu.main-navigation a {
-  /* margin-right: 20px; */
 }
 
 .menu.main-navigation a:last-child {
@@ -581,12 +627,17 @@ body > header > * {
   font-size: 14px;
 }
 
-.menu.footer-navigation a {
+.menu.footer-navigation .menu-element__i {
   margin-left: 20px;
 }
 
-.menu.footer-navigation a:first-child {
+.menu.footer-navigation .menu-element__i:first-child {
   margin-left: 0;
+}
+
+.menu.footer-navigation .submenu {
+  bottom: 0;
+  margin-bottom: 32px;
 }
 
 /* Социалка в футере */
