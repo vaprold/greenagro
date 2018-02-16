@@ -1,5 +1,5 @@
-var closeBtns = document.querySelectorAll(".btn-close");
-var popup = document.querySelector(".popup");
+var popupBtns = document.querySelectorAll(".close-btn, .popup-btn");
+// var popup = document.querySelector(".popup");
 
 function initMap() {
   var msk = {lat: 55.709623, lng:  37.593688};
@@ -25,11 +25,41 @@ function initMap() {
   });
 }
 
+var popupToggle = function (popup) {
+  // var popupWindow;
+  // var popupSelector;
+  //
+  // if (!popup) {
+  //   popup = 'feedback';
+  // }
+  //
+  // popupSelector = '.popup-' + popup;
+  // popupWindow = document.querySelector(popupSelector);
+  popup.classList.toggle('popup-shown');
+}
+
+var popupBtnsClick = function (event) {
+  debugger;
+  event.preventDefault();
+  var selector = event.currentTarget.dataset.type;
+  var popup = (selector) ? document.querySelector('.popup-' + selector) : getParentPopup(event.currentTarget);
+  if (popup) {
+    popupToggle(popup)
+  } else {
+    location.href = this.href;
+  } ;
+}
+
+var getParentPopup = function (element) {
+  var parentNode = element.parentNode;
+  debugger;
+  if (parentNode != document) {
+    return (parentNode.classList.contains('popup')) ? parentNode : getParentPopup(parentNode);
+  }
+}
+
 window.initMap = initMap;
 
-for (var i = 0; i < closeBtns.length; i++)  {
-    closeBtns[i].addEventListener("click", function (event) {
-      event.preventDefault();
-      popup.classList.remove('popup-shown');
-      });
+for (var i = 0; i < popupBtns.length; i++)  {
+    popupBtns[i].addEventListener("click", popupBtnsClick);
 }

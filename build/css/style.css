@@ -243,7 +243,7 @@ body li {
   line-height: 28px;
 }
 
-.btn.btn-close {
+.btn.close-btn {
   background-color: #a5a0a1;
 }
 
@@ -251,11 +251,11 @@ body li {
   background-color: #93bf2c;
 }
 
-.btn.btn-close:hover {
+.btn.close-btn:hover {
   background-color: #b7b3b4;
 }
 
-.btn-close:not(.btn) {
+.close-btn:not(.btn) {
   width: 21px;
   height: 21px;
   border: none;
@@ -263,7 +263,7 @@ body li {
   text-indent: -9999px;
 }
 
-.btn-close:not(.btn):hover {
+.close-btn:not(.btn):hover {
   background: url('../img/sprites.png') -24px -470px;
 }
 
@@ -641,6 +641,42 @@ body > header > * {
   display: block;
 }
 
+/* Анимация */
+
+@keyframes bounce {
+  0% {
+            transform: translateY(2000px);
+  }
+  70% {
+            transform: translateY(-30px);
+  }
+  90% {
+            transform: translateY(10px);
+  }
+  100% {
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  to {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.popup.popup-shown .popup-container {
+  animation: bounce .5s;
+}
+
+.popup.popup-shown {
+  animation: fadeIn .3s;
+}
+
+/* Попап обратной связи */
+
 .popup-feedback .feedback-form {
   position: absolute;
   padding: 60px 100px;
@@ -667,20 +703,20 @@ body > header > * {
   margin-bottom: 14px;
 }
 
-.feedback-form .btn:not(.btn-close) {
+.feedback-form .btn:not(.close-btn) {
   float: left;
   margin-right: 25px;
 }
 
-.feedback-form .btn.btn-close {
+.feedback-form .btn.close-btn {
   float: right;
 }
 
-.feedback-form .btn-close {
+.feedback-form .close-btn {
   display: none;
 }
 
-.popup-feedback .btn-close {
+.popup-feedback .close-btn {
   display: block;
 }
 
@@ -690,7 +726,7 @@ body > header > * {
   color: #9a9a9a;
 }
 
-.popup .btn-close:not(.btn) {
+.popup .close-btn:not(.btn) {
   position: absolute;
   top: 23px;
   right: 30px;
