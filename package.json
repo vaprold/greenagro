@@ -9,6 +9,7 @@
     "url": "git://github.com/vaprold/greenagro.git"
   },
   "dependencies": {
+    "browser-cookies": "^1.2.0",
     "eslint": "^2.4.0",
     "normalize.css": "^7.0.0",
     "webpack": "^1.12.14",

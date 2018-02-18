@@ -431,19 +431,6 @@ body li {
 .menu .menu-element__i:not(a) {
   cursor: default;
 }
-/* Вспомогательные */
-
-.container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  width: 1170px;
-}
-
-.clearfix:after {
-    content: "";
-    display: block;
-    clear: both;
-}
 
 /* Шапка */
 
@@ -539,7 +526,7 @@ body > header > * {
   background: url('../img/sprites.png') -24px -84px;
 }
 
-.language-block .language-list {
+.language-list {
   display: none;
   position: absolute;
   right: 0;
@@ -547,9 +534,6 @@ body > header > * {
   margin: 0;
   margin-top: 7px;
   margin-right: 3px;
-  padding: 7px 9px;
-  padding-right: 29px;
-  width: 50px;
 
   border: 1px solid #e6e6e6;
   background-color: #fff;
@@ -559,11 +543,19 @@ body > header > * {
 }
 
 .language-list .language {
+  display: block;
+  padding: 7px 9px;
+  padding-right: 29px;
   margin-bottom: 7px;
 }
 
 .language-list li:last-child .language {
   margin-bottom: 0px;
+}
+
+.language-list .language:hover {
+  background-color: #7fac17;
+  color: #fff;
 }
 
 /* Футер */
@@ -688,10 +680,6 @@ body > header > * {
   z-index: 2;
 }
 
-.popup-shown {
-  display: block;
-}
-
 /* Анимация */
 
 @keyframes bounce {
@@ -718,11 +706,11 @@ body > header > * {
   }
 }
 
-.popup.popup-shown .popup-container {
+.popup.shown .popup-container {
   animation: bounce .5s;
 }
 
-.popup.popup-shown {
+.popup.shown {
   animation: fadeIn .3s;
 }
 
@@ -1079,6 +1067,24 @@ body > header > * {
 .news-title h2 {
   font-size: 30px;
   line-height: 50px;
+}
+
+/* Вспомогательные */
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 1170px;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.shown {
+  display: block;
 }
 
 /* Спрайты */
