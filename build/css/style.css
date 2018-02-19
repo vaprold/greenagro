@@ -88,11 +88,6 @@ h1, h2, h3, h4, h5,
   text-transform: uppercase;
 }
 
-main h1 {
-  background-color: #7fac17;
-  color: #fff;
-}
-
 h3 {
   font-style: 24px;
 }
@@ -125,7 +120,20 @@ table th {
 /* Заголовки */
 
 .text-content h2 {
-  margin-bottom: 10px;
+  margin-top: 60px;
+  margin-bottom: 5px;
+}
+
+/* Картинки */
+
+figure {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+figure img {
+  display: block;
+  margin: 0 auto;
 }
 
 /* Ссылки */
@@ -193,6 +201,7 @@ body li {
 }
 
 .text-content ol, .text-content ul {
+  margin-top: 18px;
   padding: 0; /* Удаляем  установленное по умолчанию левое поле*/
   list-style: none; /* Отменяем нумерацию установленную по умолчанию */
 }
@@ -203,6 +212,7 @@ body li {
 
 .text-content li {
   position: relative; /* Создаем контекст для позиционирования элементов */
+  margin: 10px 0;
   margin-left: 50px; /* Даем каждому элементу списка отступ слева, что бы освободить пространство для нумерации */
 }
 
@@ -450,6 +460,10 @@ body > header > * {
   width: 166px;
 }
 
+.menu-logo img {
+  vertical-align: text-bottom;
+}
+
 /* Главнео меню */
 
 .menu.main-navigation {
@@ -562,6 +576,7 @@ body > header > * {
 
 .find-us {
   position: relative;
+  margin-top: 60px;
   overflow: hidden;
   border-top: 2px solid #7fac17;
 }
@@ -619,17 +634,21 @@ body > header > * {
   font-size: 14px;
 }
 
-.menu.footer-navigation .menu-element__i {
+.menu.footer-navigation li {
   margin-left: 20px;
 }
 
-.menu.footer-navigation .menu-element__i:first-child {
+.menu.footer-navigation li:first-child {
   margin-left: 0;
 }
 
 .menu.footer-navigation .submenu {
   bottom: 0;
   margin-bottom: 32px;
+}
+
+.menu.footer-navigation .submenu li {
+  margin: 0;
 }
 
 /* Социалка в футере */
@@ -773,17 +792,144 @@ body > header > * {
 
 /* Контент */
 
+/* Хлебные крошки */
+
 .breadcrumbs {
+  margin: 12px 0;
+  margin-bottom: 32px;
+
   font-family: 'PFDinTextPro', Arial, sans-serif;
   font-size: 14px;
-  line-height: 60px;
-  font-weight: 700;
+  /* line-height: 60px; */
+  font-weight: 400;
 }
 
-.text-content {
+.breadcrumbs li {
+  display: inline-block;
+}
+
+.breadcrumbs li:first-child a {
+  color: #7fac17;
+}
+
+.breadcrumbs li::after {
+  display: inline-block;
+  content: "";
+  width: 25px;
+  height: 10px;
+  background: url('../img/sprites.png') -12px -2555px;
+}
+
+.breadcrumbs li:last-child::after {
+  display: none;
+}
+
+main:not(.mainpage) {
+  border-top: 1px solid #e6e6e6;
+}
+
+.main-title {
   padding: 0 15px;
 }
 
+main h1 {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 8px 22px;
+  line-height: normal;
+
+  background-color: #7fac17;
+  color: #fff;
+}
+
+/* Боковая панель */
+
+.left-column {
+  float: left;
+  width: 650px;
+  padding: 0 15px;
+}
+
+.right-column {
+  float: right;
+  width: 360px;
+  padding: 0 15px;
+}
+
+.right-column h5 {
+  line-height: normal;
+  margin-bottom: 30px;
+}
+
+.right-column .two-per-row {
+  margin-top: 50px;
+}
+
+/* Изображение с обтекающим текстом */
+.figure-block {
+  margin-top: 56px;
+  padding: 10px 0;
+}
+
+.figure-block .figure-text {
+  padding: 0 15px;
+  width: 361px;
+}
+
+.figure-block figure {
+  width: 260px;
+}
+
+.figure-block.left-text .figure-text {
+  float: left;
+  padding-left: 0;
+}
+
+.figure-block.left-text figure {
+  float: right;
+  padding-right: 0;
+}
+
+.figure-block.right-text .figure-text {
+  float: right;
+  padding-right: 0;
+}
+
+.figure-block.right-text figure {
+  float: left;
+  padding-left: 0;
+}
+
+.figure-block.white {
+  background-color: #fff;
+}
+
+.figure-block.oreganic-fix {
+  margin-top: 25px;
+}
+
+.figure-block.oreganic-fix .figure-text {
+  margin-top: 30px;
+}
+
+/* Картинки по 2 в линию */
+.two-per-row > * {
+  /* display: inline-block; */
+  float: left;
+  box-sizing: border-box;
+  width: 50%;
+  margin-bottom: 15px;
+  padding-right: 6px;
+}
+
+.two-per-row > *:nth-child(2n) {
+  padding-right: 0;
+  padding-left: 6px;
+}
+
+.two-per-row img {
+  max-width: 100%;
+}
 /* Заголовки промо и новостей */
 
 .news-title .title-caption, .promo-title .title-caption{
@@ -833,15 +979,15 @@ body > header > * {
 
 /* Категории товаров на главной */
 
-.product-list {
+.mainpage .product-list {
   padding: 90px 15px;
 }
 
-.product-list li {
+.mainpage .product-list li {
   display: inline;
 }
 
-.product-list .product-item {
+.mainpage .product-list .product-item {
   position: relative;
   display: block;
   float:left;
@@ -856,14 +1002,13 @@ body > header > * {
   text-align: center;
 }
 
-.product-list .product-item:hover {
+.mainpage .product-list .product-item:hover {
   background-color: #dbf1a9;
 }
 
-
 /* Стрелка открытия окна */
 
-.product-list .product-item::after {
+.mainpage .product-list .product-item::after {
   display: block;
   content: "";
   position: absolute;
@@ -876,12 +1021,12 @@ body > header > * {
   background: url('../img/sprites.png') -24px -1221px;
 }
 
-.product-list .product-item:hover::after {
+.mainpage .product-list .product-item:hover::after {
   background: url('../img/sprites.png') -24px -1136px;
 }
 /* Рисунки категорий */
 
-.product-list .product-item.product-poultry::before {
+.mainpage .product-list .product-item.product-poultry::before {
   display: block;
   content: "";
   position: absolute;
@@ -894,7 +1039,7 @@ body > header > * {
   background: url('../img/sprites.png') -24px -2276px;
 }
 
-.product-list .product-item.product-pig::before {
+.mainpage .product-list .product-item.product-pig::before {
   display: block;
   content: "";
   position: absolute;
@@ -907,7 +1052,7 @@ body > header > * {
   background: url('../img/sprites.png') -24px -2143px;
 }
 
-.product-list .product-item.product-livestock::before {
+.mainpage .product-list .product-item.product-livestock::before {
   display: block;
   content: "";
   position: absolute;
@@ -920,7 +1065,7 @@ body > header > * {
   background: url('../img/sprites.png') -24px -2414px;
 }
 
-.product-item .product-caption {
+.mainpage .product-item .product-caption {
   color: #7fac17;
   font-family: 'PFDinDisplayPro', Verdana, sans-serif;
   font-size: 26px;
@@ -929,16 +1074,21 @@ body > header > * {
   text-transform: uppercase;
 }
 
-.product-list .product-item:last-child {
+.mainpage .product-list .product-item:last-child {
   margin-right: 0;
 }
 
 /* Текст на главной */
 
-.main-content {
+.mainpage .main-content {
   padding: 70px 0;
   padding-bottom: 90px;
   background-color: #f4f4f4;
+}
+
+.mainpage .text-content h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .mainpage .main-content .text-content {
@@ -976,9 +1126,9 @@ body > header > * {
 
 /* Новости на главной */
 
-.main-news {
+.main-news.container {
   padding: 90px 15px;
-  padding-bottom: 110px;
+  padding-bottom: 50px;
 }
 
 .main-news .title {
@@ -993,7 +1143,7 @@ body > header > * {
   position: absolute;
   top: 0;
   bottom: 0;
-  height: 24px;
+  height: 28px;
   margin: auto;
   margin-left: 35px;
 }
@@ -1094,7 +1244,7 @@ body > header > * {
     background: url('../img/sprites.png') -24px -2414px;
 }
 
-.bg-paultry {
+.bg-poultry {
     width: 136px; height: 90px;
     background: url('../img/sprites.png') -24px -2276px;
 }
