@@ -808,8 +808,12 @@ body > header > * {
   display: inline-block;
 }
 
-.breadcrumbs li:first-child a {
+.breadcrumbs li a {
   color: #7fac17;
+}
+
+.breadcrumbs li:last-child a {
+  color: #000;
 }
 
 .breadcrumbs li::after {
@@ -823,6 +827,8 @@ body > header > * {
 .breadcrumbs li:last-child::after {
   display: none;
 }
+
+/* Заголовок страницы */
 
 main:not(.mainpage) {
   border-top: 1px solid #e6e6e6;
@@ -840,6 +846,10 @@ main h1 {
 
   background-color: #7fac17;
   color: #fff;
+}
+
+.main-content {
+  padding: 0 15px;
 }
 
 /* Боковая панель */
@@ -861,23 +871,23 @@ main h1 {
   margin-bottom: 30px;
 }
 
-.right-column .two-per-row {
-  margin-top: 50px;
-}
-
 /* Изображение с обтекающим текстом */
+
 .figure-block {
-  margin-top: 56px;
-  padding: 10px 0;
+  /* padding: 10px 0; */
 }
 
-.figure-block .figure-text {
-  padding: 0 15px;
-  width: 361px;
+p + .figure-block {
+  margin-top: 56px;
+}
+
+.figure-text {
+  width: calc(100% - 290px);
 }
 
 .figure-block figure {
   width: 260px;
+  margin: 0;
 }
 
 .figure-block.left-text .figure-text {
@@ -901,11 +911,12 @@ main h1 {
 }
 
 .figure-block.white {
+  padding: 10px 0;
   background-color: #fff;
 }
 
 .figure-block.oreganic-fix {
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 .figure-block.oreganic-fix .figure-text {
@@ -913,23 +924,164 @@ main h1 {
 }
 
 /* Картинки по 2 в линию */
-.two-per-row > * {
-  /* display: inline-block; */
-  float: left;
+
+.right-column .two-per-row {
+  margin-top: 50px;
+}
+
+/* Две колонгки текста */
+
+.two-cols {
   box-sizing: border-box;
-  width: 50%;
+}
+
+.two-cols .col {
+  float: left;
+  width: calc(50% - 17px);
+  /* margin-bottom: 10px; */
+}
+
+.two-cols .col:nth-child(2n+1) {
+  margin-right: 34px;
+}
+
+/* Картинки на странице about */
+
+.about-cols.two-cols {
+  margin-top: 50px;
+}
+
+.about-cols.two-cols .col {
+  width: calc(50% - 6px);
   margin-bottom: 15px;
-  padding-right: 6px;
 }
 
-.two-per-row > *:nth-child(2n) {
-  padding-right: 0;
-  padding-left: 6px;
+.about-cols.two-cols .col:nth-child(2n+1) {
+  margin-right: 12px;
 }
 
-.two-per-row img {
+.about-cols.two-cols .col:nth-last-child(-n+2) {
+  margin-bottom: 0;
+}
+
+.about-cols.two-cols img {
   max-width: 100%;
 }
+
+/* Колонки в figure-block */
+
+.figure-text.two-cols {
+  padding-left: 100px;
+}
+
+/* Колонки на странице Орегано */
+
+.oregano-cols {
+  margin-top: 32px;
+}
+
+.two-cols.oregano-cols .col {
+  width: calc(50% - 75px);
+}
+
+.two-cols.oregano-cols .col:nth-child(2n+1) {
+  margin-right: 150px;
+}
+
+.two-cols.oregano-cols .figure-text {
+  width: calc(100% - 230px);
+}
+
+.two-cols.oregano-cols .col:nth-child(2) figure {
+  margin-top: -11px;
+}
+
+.two-cols.oregano-cols .figure-block figure {
+  width: 200px;
+}
+
+/* Фичи Орегано */
+
+.features-block {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0;
+}
+
+.text-content .features-block + * {
+  margin-top: 10px;
+}
+
+.features-block .feature-item {
+  position: relative;
+  display: inline-block;
+
+  width: 170px;
+  min-height: 140px;
+
+  padding-top: 85px;
+  margin-right: 150px;
+
+  font-size: 16px;
+  vertical-align: top;
+}
+
+.features-block .feature-item:nth-child(4n),
+.features-block .feature-item:last-child {
+  margin-right: 0;
+}
+
+.features-block .feature-item::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  margin-left: 50%;
+}
+
+.features-block .feat-1::before {
+  left: -46px;
+  width: 92px; height: 73px;
+  background: url('../img/sprites.png') -24px -1780px;
+}
+
+.features-block .feat-2::before {
+  left: -36.5px;
+  width: 73px; height: 73px;
+  background: url('../img/sprites.png') -24px -1538px;
+}
+
+.features-block .feat-3::before {
+  left: -36.5px;
+  width: 73px; height: 73px;
+  background: url('../img/sprites.png') -24px -1901px;
+}
+
+.features-block .feat-4::before {
+  left: -36.5px;
+  width: 73px; height: 73px;
+  background: url('../img/sprites.png') -24px -2022px;
+}
+
+.features-block .feat-5::before {
+  left: -37.5px;
+  width: 75px; height: 65px;
+  background: url('../img/sprites.png') -24px -1306px;
+}
+
+.features-block .feat-6::before {
+  left: -36.5px;
+  width: 73px; height: 73px;
+  background: url('../img/sprites.png') -24px -1659px;
+}
+
+.features-block .feat-7::before {
+  left: -34px;
+  width: 68px; height: 71px;
+  background: url('../img/sprites.png') -24px -1419px;
+}
+
+
 /* Заголовки промо и новостей */
 
 .news-title .title-caption, .promo-title .title-caption{
@@ -1024,6 +1176,7 @@ main h1 {
 .mainpage .product-list .product-item:hover::after {
   background: url('../img/sprites.png') -24px -1136px;
 }
+
 /* Рисунки категорий */
 
 .mainpage .product-list .product-item.product-poultry::before {
@@ -1091,13 +1244,13 @@ main h1 {
   margin-bottom: 10px;
 }
 
-.mainpage .main-content .text-content {
+.mainpage .text-content {
   float:left;
   width: 460px;
   padding: 0 15px;
 }
 
-.mainpage .main-content .text-content p {
+.mainpage .main-content p {
   margin-bottom: 25px;
 }
 
@@ -1126,8 +1279,8 @@ main h1 {
 
 /* Новости на главной */
 
-.main-news.container {
-  padding: 90px 15px;
+.main-news {
+  padding: 85px 15px;
   padding-bottom: 50px;
 }
 
@@ -1179,11 +1332,6 @@ main h1 {
 .news-item .news-image {
   width: 262px;
   height: 142px;
-}
-
-.news-image img {
-  /* width: 260px;
-  height: auto; */
 }
 
 .news-item .news-content {
@@ -1252,41 +1400,6 @@ main h1 {
 .bg-pig {
     width: 133px; height: 85px;
     background: url('../img/sprites.png') -24px -2143px;
-}
-
-.bg-feat-1 {
-    width: 92px; height: 73px;
-    background: url('../img/sprites.png') -24px -1780px;
-}
-
-.bg-feat-2 {
-    width: 73px; height: 73px;
-    background: url('../img/sprites.png') -24px -1538px;
-}
-
-.bg-feat-3 {
-    width: 73px; height: 73px;
-    background: url('../img/sprites.png') -24px -1901px;
-}
-
-.bg-feat-4 {
-    width: 73px; height: 73px;
-    background: url('../img/sprites.png') -24px -2022px;
-}
-
-.bg-feat-5 {
-    width: 75px; height: 65px;
-    background: url('../img/sprites.png') -24px -1306px;
-}
-
-.bg-feat-6 {
-    width: 73px; height: 73px;
-    background: url('../img/sprites.png') -24px -1659px;
-}
-
-.bg-feat-7 {
-    width: 68px; height: 71px;
-    background: url('../img/sprites.png') -24px -1419px;
 }
 
 .bg-fb {
