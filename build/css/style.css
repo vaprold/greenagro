@@ -78,7 +78,7 @@ body {
 
 /* Заголовки */
 
-h1, h2, h3, h4, h5,
+h1, h2, h3, h4, h5, h6,
 .feedback-form .form-title {
   margin: 0;
   font-family: 'PFDinDisplayPro', Verdana, sans-serif;
@@ -105,10 +105,9 @@ h5 {
 }
 
 h6 {
-  font-family: 'PFDinTextPro', Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
-  font-weight: 700;
+  line-height: normal;
+  text-transform: none;
 }
 
 table th {
@@ -134,6 +133,10 @@ figure {
 figure img {
   display: block;
   margin: 0 auto;
+
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
 
 /* Ссылки */
@@ -201,7 +204,7 @@ body li {
 }
 
 .text-content ol, .text-content ul {
-  margin-top: 18px;
+  margin-top: 10px;
   padding: 0; /* Удаляем  установленное по умолчанию левое поле*/
   list-style: none; /* Отменяем нумерацию установленную по умолчанию */
 }
@@ -800,18 +803,24 @@ body > header > * {
 
   font-family: 'PFDinTextPro', Arial, sans-serif;
   font-size: 14px;
-  /* line-height: 60px; */
   font-weight: 400;
+  cursor: default;
 }
 
 .breadcrumbs li {
   display: inline-block;
 }
 
+.breadcrumbs li,
 .breadcrumbs li a {
   color: #7fac17;
 }
 
+.breadcrumbs li > a {
+  cursor: pointer;
+}
+
+.breadcrumbs li:last-child,
 .breadcrumbs li:last-child a {
   color: #000;
 }
@@ -852,236 +861,6 @@ main h1 {
   padding: 0 15px;
 }
 
-/* Боковая панель */
-
-.left-column {
-  float: left;
-  width: 650px;
-  padding: 0 15px;
-}
-
-.right-column {
-  float: right;
-  width: 360px;
-  padding: 0 15px;
-}
-
-.right-column h5 {
-  line-height: normal;
-  margin-bottom: 30px;
-}
-
-/* Изображение с обтекающим текстом */
-
-.figure-block {
-  /* padding: 10px 0; */
-}
-
-p + .figure-block {
-  margin-top: 56px;
-}
-
-.figure-text {
-  width: calc(100% - 290px);
-}
-
-.figure-block figure {
-  width: 260px;
-  margin: 0;
-}
-
-.figure-block.left-text .figure-text {
-  float: left;
-  padding-left: 0;
-}
-
-.figure-block.left-text figure {
-  float: right;
-  padding-right: 0;
-}
-
-.figure-block.right-text .figure-text {
-  float: right;
-  padding-right: 0;
-}
-
-.figure-block.right-text figure {
-  float: left;
-  padding-left: 0;
-}
-
-.figure-block.white {
-  padding: 10px 0;
-  background-color: #fff;
-}
-
-.figure-block.oreganic-fix {
-  margin-top: 15px;
-}
-
-.figure-block.oreganic-fix .figure-text {
-  margin-top: 30px;
-}
-
-/* Картинки по 2 в линию */
-
-.right-column .two-per-row {
-  margin-top: 50px;
-}
-
-/* Две колонгки текста */
-
-.two-cols {
-  box-sizing: border-box;
-}
-
-.two-cols .col {
-  float: left;
-  width: calc(50% - 17px);
-  /* margin-bottom: 10px; */
-}
-
-.two-cols .col:nth-child(2n+1) {
-  margin-right: 34px;
-}
-
-/* Картинки на странице about */
-
-.about-cols.two-cols {
-  margin-top: 50px;
-}
-
-.about-cols.two-cols .col {
-  width: calc(50% - 6px);
-  margin-bottom: 15px;
-}
-
-.about-cols.two-cols .col:nth-child(2n+1) {
-  margin-right: 12px;
-}
-
-.about-cols.two-cols .col:nth-last-child(-n+2) {
-  margin-bottom: 0;
-}
-
-.about-cols.two-cols img {
-  max-width: 100%;
-}
-
-/* Колонки в figure-block */
-
-.figure-text.two-cols {
-  padding-left: 100px;
-}
-
-/* Колонки на странице Орегано */
-
-.oregano-cols {
-  margin-top: 32px;
-}
-
-.two-cols.oregano-cols .col {
-  width: calc(50% - 75px);
-}
-
-.two-cols.oregano-cols .col:nth-child(2n+1) {
-  margin-right: 150px;
-}
-
-.two-cols.oregano-cols .figure-text {
-  width: calc(100% - 230px);
-}
-
-.two-cols.oregano-cols .col:nth-child(2) figure {
-  margin-top: -11px;
-}
-
-.two-cols.oregano-cols .figure-block figure {
-  width: 200px;
-}
-
-/* Фичи Орегано */
-
-.features-block {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 0;
-}
-
-.text-content .features-block + * {
-  margin-top: 10px;
-}
-
-.features-block .feature-item {
-  position: relative;
-  display: inline-block;
-
-  width: 170px;
-  min-height: 140px;
-
-  padding-top: 85px;
-  margin-right: 150px;
-
-  font-size: 16px;
-  vertical-align: top;
-}
-
-.features-block .feature-item:nth-child(4n),
-.features-block .feature-item:last-child {
-  margin-right: 0;
-}
-
-.features-block .feature-item::before {
-  position: absolute;
-  content: "";
-  display: block;
-  top: 0;
-  margin-left: 50%;
-}
-
-.features-block .feat-1::before {
-  left: -46px;
-  width: 92px; height: 73px;
-  background: url('../img/sprites.png') -24px -1780px;
-}
-
-.features-block .feat-2::before {
-  left: -36.5px;
-  width: 73px; height: 73px;
-  background: url('../img/sprites.png') -24px -1538px;
-}
-
-.features-block .feat-3::before {
-  left: -36.5px;
-  width: 73px; height: 73px;
-  background: url('../img/sprites.png') -24px -1901px;
-}
-
-.features-block .feat-4::before {
-  left: -36.5px;
-  width: 73px; height: 73px;
-  background: url('../img/sprites.png') -24px -2022px;
-}
-
-.features-block .feat-5::before {
-  left: -37.5px;
-  width: 75px; height: 65px;
-  background: url('../img/sprites.png') -24px -1306px;
-}
-
-.features-block .feat-6::before {
-  left: -36.5px;
-  width: 73px; height: 73px;
-  background: url('../img/sprites.png') -24px -1659px;
-}
-
-.features-block .feat-7::before {
-  left: -34px;
-  width: 68px; height: 71px;
-  background: url('../img/sprites.png') -24px -1419px;
-}
-
-
 /* Заголовки промо и новостей */
 
 .news-title .title-caption, .promo-title .title-caption{
@@ -1104,9 +883,9 @@ p + .figure-block {
 
 .promo-block {
   height: 430px;
-  background-color: lime;
+  /* background-color: lime; */
+  background-size: cover;
   background-position: center;
-  background-size: auto 100%;
   background-repeat: no-repeat;
 }
 
@@ -1127,6 +906,7 @@ p + .figure-block {
 .mainpage .promo-block {
   background-color: #5e443c;
   background-image: url('../img/main-promo.jpg');
+  background-size: auto 100%;
 }
 
 /* Категории товаров на главной */
@@ -1358,6 +1138,291 @@ p + .figure-block {
 
 .news-item:hover .news-content::after {
   background: url('../img/sprites.png') -24px -752px;
+}
+
+/* Внутренние страницы */
+
+/* Боковая панель */
+
+.left-column {
+  float: left;
+  width: 650px;
+  padding: 0 15px;
+}
+
+.right-column {
+  float: right;
+  width: 360px;
+  padding: 0 15px;
+}
+
+.right-column h5 {
+  line-height: normal;
+  margin-bottom: 30px;
+}
+
+/* Изображение с обтекающим текстом */
+
+.figure-block {
+  /* padding: 10px 0; */
+}
+
+p + .figure-block {
+  margin-top: 56px;
+}
+
+.figure-text {
+  width: calc(100% - 290px);
+}
+
+.figure-block figure {
+  width: 260px;
+  margin: 0;
+}
+
+.figure-block.left-text .figure-text {
+  float: left;
+  padding-left: 0;
+}
+
+.figure-block.left-text figure {
+  float: right;
+  padding-right: 0;
+}
+
+.figure-block.right-text .figure-text {
+  float: right;
+  padding-right: 0;
+}
+
+.figure-block.right-text figure {
+  float: left;
+  padding-left: 0;
+}
+
+.figure-block.white {
+  padding: 10px 0;
+  background-color: #fff;
+}
+
+.figure-block.oreganic-fix {
+  margin-top: 15px;
+}
+
+.figure-block.oreganic-fix .figure-text {
+  margin-top: 30px;
+}
+
+/* Картинки по 2 в линию */
+
+.right-column .two-per-row {
+  margin-top: 50px;
+}
+
+/* Две колонгки текста */
+
+.two-cols {
+  box-sizing: border-box;
+}
+
+.two-cols .col {
+  float: left;
+  width: calc(50% - 17px);
+  /* margin-bottom: 10px; */
+}
+
+.two-cols .col:nth-child(2n+1) {
+  margin-right: 34px;
+}
+
+/* Картинки на странице about */
+
+.about-cols.two-cols {
+  margin-top: 50px;
+}
+
+.about-cols.two-cols .col {
+  width: calc(50% - 6px);
+  margin-bottom: 15px;
+}
+
+.about-cols.two-cols .col:nth-child(2n+1) {
+  margin-right: 12px;
+}
+
+.about-cols.two-cols .col:nth-last-child(-n+2) {
+  margin-bottom: 0;
+}
+
+.about-cols.two-cols img {
+  max-width: 100%;
+}
+
+/* Колонки в figure-block */
+
+.figure-text.two-cols {
+  padding-left: 100px;
+}
+
+/* Колонки на странице Орегано */
+
+.oregano-cols {
+  margin-top: 32px;
+}
+
+.two-cols.oregano-cols .col {
+  width: calc(50% - 75px);
+}
+
+.two-cols.oregano-cols .col:nth-child(2n+1) {
+  margin-right: 150px;
+}
+
+.two-cols.oregano-cols .figure-text {
+  width: calc(100% - 230px);
+}
+
+.two-cols.oregano-cols .col:nth-child(2) figure {
+  margin-top: -11px;
+}
+
+.two-cols.oregano-cols .figure-block figure {
+  width: 200px;
+}
+
+/* Фичи Орегано */
+
+.features-block {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0;
+}
+
+.text-content .features-block + * {
+  margin-top: 10px;
+}
+
+.features-block .feature-item {
+  position: relative;
+  display: inline-block;
+
+  width: 170px;
+  min-height: 140px;
+
+  padding-top: 85px;
+  margin-right: 150px;
+
+  font-size: 16px;
+  vertical-align: top;
+}
+
+.features-block .feature-item:nth-child(4n),
+.features-block .feature-item:last-child {
+  margin-right: 0;
+}
+
+.features-block .feature-item::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  margin-left: 50%;
+}
+
+.features-block .feat-1::before {
+  left: -46px;
+  width: 92px; height: 73px;
+  background: url('../img/sprites.png') -24px -1780px;
+}
+
+.features-block .feat-2::before {
+  left: -36.5px;
+  width: 73px; height: 73px;
+  background: url('../img/sprites.png') -24px -1538px;
+}
+
+.features-block .feat-3::before {
+  left: -36.5px;
+  width: 73px; height: 73px;
+  background: url('../img/sprites.png') -24px -1901px;
+}
+
+.features-block .feat-4::before {
+  left: -36.5px;
+  width: 73px; height: 73px;
+  background: url('../img/sprites.png') -24px -2022px;
+}
+
+.features-block .feat-5::before {
+  left: -37.5px;
+  width: 75px; height: 65px;
+  background: url('../img/sprites.png') -24px -1306px;
+}
+
+.features-block .feat-6::before {
+  left: -36.5px;
+  width: 73px; height: 73px;
+  background: url('../img/sprites.png') -24px -1659px;
+}
+
+.features-block .feat-7::before {
+  left: -34px;
+  width: 68px; height: 71px;
+  background: url('../img/sprites.png') -24px -1419px;
+}
+
+/* Продукция */
+
+/* Промо-заголовки */
+
+.promo-block.livestock {
+  height: 380px;
+  margin-bottom: 40px;
+
+  background-color: #a7a068;
+  background-image: url("../img/livestock-promo.jpg");
+}
+
+.promo-block.pig {
+  height: 380px;
+  margin-bottom: 40px;
+
+  background-color: #9e8887;
+  background-image: url("../img/pig-promo.jpg");
+}
+
+.promo-block.poultry {
+  height: 380px;
+  margin-bottom: 40px;
+
+  background-color: #7f7140;
+  background-image: url("../img/poultry-promo.jpg");
+}
+/* Блок описания продукта */
+
+.product-block > h2 {
+  margin: 20px 0;
+}
+
+.product-block__i {
+  padding: 0 29px;
+  padding-bottom: 18px;
+
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-bottom: none;
+}
+
+.product-block__i:last-of-type {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.product-block__i > h5 {
+  margin-bottom: 10px;
+}
+
+.product-block__i p + h6 {
+  margin-top: 30px;
 }
 
 /* Новости */
