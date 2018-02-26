@@ -13,8 +13,8 @@ var browserCookies = require('browser-cookies');
 /**
  * Отрисовка гулокарты
  */
-function initMap() {
-  var msk = {lat: 55.709623, lng:  37.593688};
+function initMap(isContacts) {
+  var msk = isContacts ? {lat: 55.711987, lng: 37.483867} : {lat: 55.709623, lng: 37.593688};
   var office = {lat: 55.678803, lng: 37.253474};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 11,
@@ -38,11 +38,20 @@ function initMap() {
 }
 
 /**
- * Переключает класс "shown" у заданного элемента
- * @param {Node} popup
+ * Отрисовка гулокарты на странице контактов
  */
-var popupToggle = function (popup) {
-  popup.classList.toggle('shown');
+function initContactsMap() {
+  var isContacts = true;
+  initMap(isContacts);
+}
+
+
+/**
+ * Переключает класс "shown" у заданного элемента
+ * @param {Node} pageBlock
+ */
+var shownToggle = function (pageBlock) {
+  pageBlock.classList.toggle('shown');
 }
 
 /**
@@ -57,7 +66,7 @@ var popupBtnsClick = function (event) {
   var selector = event.currentTarget.dataset.type;
   var popup = (selector) ? document.querySelector('.popup-' + selector) : getParentPopup(event.currentTarget);
   if (popup) {
-    popupToggle(popup)
+    shownToggle(popup)
   } else {
     location.href = this.href;
   } ;
@@ -181,7 +190,7 @@ var langFeatures = function () {
 
   // установка обработчика на кнопку выбора языка
   langBtn.addEventListener('click', function(evt) {
-    langList.classList.toggle('shown');
+    shownToggle(langList);
 
     document.addEventListener('click', documentListener);
 
@@ -200,6 +209,7 @@ var langFeatures = function () {
 
 //отрисовка гулокарты
 window.initMap = initMap;
+window.initContactsMap = initContactsMap;
 
 // Установка обработчиков событий на кнопки попапов
 for (var i = 0; i < popupBtns.length; i++)  {

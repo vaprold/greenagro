@@ -60,6 +60,28 @@
   url("../fonts/PFDinDisplayPro-Bold.eot?#iefix") format("embedded-opentype"); /* IE6-IE8 */
 }
 
+/* Вспомогательные */
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 1170px;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body .shown {
+  display: block;
+}
+
+.padding {
+  padding: 0 15px;
+}
+
 /* Базовые стили */
 
 body {
@@ -348,8 +370,6 @@ body li {
 /* Меню */
 
 .menu {
-  padding: 0 15px;
-
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -459,7 +479,6 @@ body > header > * {
 
 .menu-logo {
   margin: 0;
-  padding: 0 15px;
   width: 166px;
 }
 
@@ -485,7 +504,6 @@ body > header > * {
 .header-tools {
   position: relative;
   width: 229px;
-  padding: 0 15px;
 
   text-align: right;
   line-height: normal;
@@ -577,14 +595,17 @@ body > header > * {
 
 /* Футер */
 
-.find-us {
-  position: relative;
+footer {
   margin-top: 60px;
-  overflow: hidden;
   border-top: 2px solid #7fac17;
 }
 
-.find-us .map-block {
+footer .footer-find-us {
+  position: relative;
+  overflow: hidden;
+}
+
+footer .footer-find-us .map-block {
   position: relative;
   height: 320px;
 
@@ -597,7 +618,7 @@ body > header > * {
   z-index: 1;
 }
 
-.find-us .address-block {
+footer .footer-find-us .address-block {
   position: absolute;
   height: 320px;
   top: 0;
@@ -609,18 +630,15 @@ body > header > * {
   z-index: 2;
 }
 
-.address-block .container.text-content {
+footer .address-content {
   width: 415px;
   margin: 0;
   padding: 25px 40px;
   padding-right: 15px;
 }
 
-.address-block .container.text-content .btn {
+footer .address-content .btn {
   margin-top: 40px;
-}
-
-.find-us .map-block {
 }
 
 /* Меню в футере */
@@ -659,7 +677,6 @@ body > header > * {
 .footer-social {
   float: right;
   width: 440px;
-  padding: 0 15px;
 
   line-height: 90px;
   text-align: right;
@@ -702,6 +719,12 @@ body > header > * {
   z-index: 2;
 }
 
+.popup .close-btn:not(.btn) {
+  position: absolute;
+  top: 23px;
+  right: 30px;
+}
+
 /* Анимация */
 
 @keyframes bounce {
@@ -736,61 +759,23 @@ body > header > * {
   animation: fadeIn .3s;
 }
 
-/* Попап обратной связи */
+/* Попап формы обр. связи */
 
 .popup-feedback .feedback-form {
   position: absolute;
-  padding: 60px 100px;
   width: 550px;
   height: 476px;
   left: 0;
   right: 0;
-  margin: 10% auto;
+  margin-top: 10%;
+  padding: 60px 100px;
 
   background-color: #f4f4f4;
   border: 2px solid #90bb40;
 }
 
-.feedback-form .form-title {
-  margin-bottom: 15px;
-}
-
-.feedback-form .inputbox {
+.popup-feedback .feedback-form .close-btn {
   display: block;
-  width: 100%;
-}
-
-.feedback-form textarea.inputbox {
-  margin-bottom: 14px;
-}
-
-.feedback-form .btn:not(.close-btn) {
-  float: left;
-  margin-right: 25px;
-}
-
-.feedback-form .btn.close-btn {
-  float: right;
-}
-
-.feedback-form .close-btn {
-  display: none;
-}
-
-.popup-feedback .close-btn {
-  display: block;
-}
-
-.feedback-form .personal {
-  float: left;
-  line-height: 40px;
-  color: #9a9a9a;
-}
-
-.popup .close-btn:not(.btn) {
-  position: absolute;
-  top: 23px;
-  right: 30px;
 }
 
 /* Контент */
@@ -843,10 +828,6 @@ main:not(.mainpage) {
   border-top: 1px solid #e6e6e6;
 }
 
-.main-title {
-  padding: 0 15px;
-}
-
 main h1 {
   display: inline-block;
   margin-top: 24px;
@@ -855,10 +836,6 @@ main h1 {
 
   background-color: #7fac17;
   color: #fff;
-}
-
-.main-content {
-  padding: 0 15px;
 }
 
 /* Заголовки промо и новостей */
@@ -891,7 +868,6 @@ main h1 {
 
 .promo-content {
   width: 585px;
-  padding: 0 15px;
   padding-left: 110px;
   padding-top: 120px;
 }
@@ -1027,7 +1003,6 @@ main h1 {
 .mainpage .text-content {
   float:left;
   width: 460px;
-  padding: 0 15px;
 }
 
 .mainpage .main-content p {
@@ -1043,7 +1018,6 @@ main h1 {
 .video-block {
   float: right;
   width: 525px;
-  padding: 0 15px;
 }
 
 .video-block h5 {
@@ -1147,13 +1121,11 @@ main h1 {
 .left-column {
   float: left;
   width: 650px;
-  padding: 0 15px;
 }
 
 .right-column {
   float: right;
   width: 360px;
-  padding: 0 15px;
 }
 
 .right-column h5 {
@@ -1176,7 +1148,7 @@ p + .figure-block {
 }
 
 .figure-block figure {
-  width: 260px;
+  width: 262px;
   margin: 0;
 }
 
@@ -1425,29 +1397,122 @@ p + .figure-block {
   margin-top: 30px;
 }
 
+/* Контакты, страница */
+
+.find-us-block .address-content {
+  padding: 45px 15px;
+  padding-bottom: 50px;
+}
+
+.find-us-block .address__i {
+  float: left;
+  position: relative;
+  width: 212.5px;
+  padding-left: 50px;
+  margin-right: 30px;
+}
+
+.find-us-block .address__i:nth-child(4n) {
+  margin-right: 0;
+}
+
+.find-us-block .address__i::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 5px;
+  width: 25px;
+  height: 25px;
+}
+
+.find-us-block .address.address__i::before {
+  background: url('../img/sprites.png') -24px -609px;
+}
+
+.find-us-block .phone.address__i::before {
+  background: url('../img/sprites.png') -24px -539px;
+}
+
+.find-us-block .email.address__i::before {
+  background: url('../img/sprites.png') -24px -266px;
+}
+
+.find-us-block .timetable.address__i::before {
+  background: url('../img/sprites.png') -24px -333px;
+}
+
+.find-us-block .map-block {
+  height: 270px;
+}
+
+/* Форма обратной связи */
+
+.feedback-block {
+  background-color: #f4f4f4;
+}
+
+.feedback-form {
+  margin: 0 auto;
+  padding: 45px 100px;
+  padding-bottom: 70px;
+  width: 750px;
+}
+
+.feedback-form .form-title {
+  margin-bottom: 15px;
+}
+
+.feedback-form .inputbox {
+  display: block;
+  width: 100%;
+}
+
+.feedback-form textarea.inputbox {
+  margin-bottom: 14px;
+}
+
+.feedback-form .btn:not(.close-btn) {
+  float: left;
+  margin-right: 25px;
+}
+
+.feedback-form .btn.close-btn {
+  float: right;
+}
+
+.feedback-form .close-btn {
+  display: none;
+}
+
+.feedback-form .personal {
+  float: left;
+  line-height: 40px;
+  color: #9a9a9a;
+}
+
+/* Филиалы */
+
+.branches-block > h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.branches-block .branch-item {
+  float: left;
+  width: 262.5px;
+  margin-right: 28px;
+  margin-bottom: 25px;
+}
+
+.branches-block .branch-item:nth-child(4n) {
+  margin-right: 0;
+}
+
 /* Новости */
 
 .news-title h2 {
   font-size: 30px;
   line-height: 50px;
-}
-
-/* Вспомогательные */
-
-.container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  width: 1170px;
-}
-
-.clearfix:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.shown {
-  display: block;
 }
 
 /* Спрайты */

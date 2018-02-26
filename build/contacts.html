@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Контакты компании Грин Агро</title>
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="container clearfix">
-        <h1 class="menu-logo">
+        <h1 class="menu-logo padding">
           <a href="index.html"><img src="img/header-logo.png" alt="Грин Агро" width="166px" height="60px"></a>
         </h1>
 
-        <nav class="main-navigation menu">
+        <nav class="main-navigation menu padding">
           <ul class="menu__i">
             <li><a href="about.html" class="menu-element__i">О компании</a></li>
             <li><span class="menu-element__i">Продукция</span>
@@ -27,7 +27,7 @@
           </ul>
         </nav>
 
-        <div class="header-tools">
+        <div class="header-tools padding">
           <div class="phone"><a href="phoneto:+79266204444">8 926 <span class="phone-big">620-44-44</span></a></div>
           <div class="language-block">
             <a href="#" class="language lang-rus">Рус</a>
@@ -39,32 +39,38 @@
         </div>
     </header>
 
-    <main class="container">
-      <h1>Контакты</h1>
+    <main>
+      <div class="container">
+        <section class="main-title padding">
+          <h1>Контакты</h1>
 
-      <nav class="breadcrumbs">
-        <ul>
-          <li><a href="index.html">Главная</a></li>
-          <li>Контакты</li>
-        </ul>
-      </nav>
+          <nav class="breadcrumbs">
+            <ul>
+              <li><a href="index.html">Главная</a></li>
+              <li>Контакты</li>
+            </ul>
+          </nav>
+        </section>
+      </div>
 
       <section class="find-us-block">
-        <div class="address-block">
-          <span class="address">143009,<br>
-                                Моск. обл., г. Одинцово,<br>
-                                ул. Северная, 24, офис 33</span>
-          <span class="phone">+7 926 620-44-44</span>
-          <span class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></span>
-          <span class="timetable">пн. - пт.: 9.00 - 18.00<br>
-                                  сб. - вс.: выходной</span>
+        <div class="container">
+          <div class="address-content text-content clearfix">
+            <div class="address address__i">143009,<br>
+                                  Моск. обл., г. Одинцово,<br>
+                                  ул. Северная, 24, офис 33</div>
+            <div class="phone address__i">+7 926 620-44-44</div>
+            <div class="email address__i"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></div>
+            <div class="timetable address__i">пн. - пт.: 9.00 - 18.00<br>
+                                    сб. - вс.: выходной</div>
+          </div>
         </div>
-        <div class="map-block">
+        <div class="map-block" id="map">
 
         </div>
       </section>
 
-      <section class="feedback-block container">
+      <section class="feedback-block">
         <form class="feedback-form">
           <div class="form-title">Задать вопрос</div>
           <input type="text" name="name" id="feedback_name" placeholder="Пожалуйста, представьтесь!" class="inputbox">
@@ -73,121 +79,77 @@
           <textarea name="message" rows="5" class="inputbox" placeholder="Напишите ваш вопрос"></textarea>
           <div class="clearfix">
             <button type="submit" name="submit" class="btn">Отправить</button>
-            <a href="#" class="btn btn-close">Закрыть окно</a>
+            <a href="#" class="btn close-btn">Закрыть окно</a>
             <span class="personal">Отправляя эту форму, Вы соглашаетесь на обработку персональных данных.</span>
           </div>
-          <a href="#" class="btn-close">Закрыть окно</a>
+          <a href="#" class="close-btn">Закрыть окно</a>
         </form>
       </section>
 
-      <section class="branches-block">
-        <h2>Филиалы</h2>
+      <div class="container">
+        <section class="branches-block padding clearfix">
+          <h2>Филиалы</h2>
 
-        <article class="branch-item">
-          <h5 class="branch">Екатеринбург</h5>
-          <p class="address">365874,<br>
-                             г. Екатеринбург, ул. Ленина, 24,<br>
-                             офис 33</p>
-          <p class="phone">+7 926 620-44-44</p>
-          <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-          <p>365874,<br>
-             г. Екатеринбург, ул. Ленина, 24,<br>
-             офис 33</p>
-          <p>+7 926 620-44-44</p>
-          <p><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-        </article>
+          <article class="branch-item text-content">
+            <h5 class="branch">Екатеринбург</h5>
+            <p class="address">365874,<br>
+                               г. Екатеринбург, ул. Ленина, 24,<br>
+                               офис 33</p>
+            <p class="phone">+7 926 620-44-44</p>
+            <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
+          </article>
 
-        <article class="branch-item">
-          <h5 class="branch">Оренбург</h5>
-          <p class="address">365874,<br>
-                             г. Екатеринбург, ул. Ленина, 24,<br>
-                             офис 33</p>
-          <p class="phone">+7 926 620-44-44</p>
-          <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-          <p>365874,<br>
-             г. Екатеринбург, ул. Ленина, 24,<br>
-             офис 33</p>
-          <p>+7 926 620-44-44</p>
-          <p><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-        </article>
+          <article class="branch-item text-content">
+            <h5 class="branch">Оренбург</h5>
+            <p class="address">365874,<br>
+                               г. Екатеринбург, ул. Ленина, 24,<br>
+                               офис 33</p>
+            <p class="phone">+7 926 620-44-44</p>
+            <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
+          </article>
 
-        <article class="branch-item">
-          <h5 class="branch">Ереван</h5>
-          <p class="address">365874,<br>
-                             г. Екатеринбург, ул. Ленина, 24,<br>
-                             офис 33</p>
-          <p class="phone">+7 926 620-44-44</p>
-          <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-          <p>365874,<br>
-             г. Екатеринбург, ул. Ленина, 24,<br>
-             офис 33</p>
-          <p>+7 926 620-44-44</p>
-          <p><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-        </article>
+          <article class="branch-item text-content">
+            <h5 class="branch">Ереван</h5>
+            <p class="address">365874,<br>
+                               г. Екатеринбург, ул. Ленина, 24,<br>
+                               офис 33</p>
+            <p class="phone">+7 926 620-44-44</p>
+            <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
+          </article>
 
-        <article class="branch-item">
-          <h5 class="branch">Нижний Новгород</h5>
-          <p class="address">365874,<br>
-                             г. Екатеринбург, ул. Ленина, 24,<br>
-                             офис 33</p>
-          <p class="phone">+7 926 620-44-44</p>
-          <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-          <p>365874,<br>
-             г. Екатеринбург, ул. Ленина, 24,<br>
-             офис 33</p>
-          <p>+7 926 620-44-44</p>
-          <p><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-        </article>
+          <article class="branch-item text-content">
+            <h5 class="branch">Нижний Новгород</h5>
+            <p class="address">365874,<br>
+                               г. Екатеринбург, ул. Ленина, 24,<br>
+                               офис 33</p>
+            <p class="phone">+7 926 620-44-44</p>
+            <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
+          </article>
 
-        <article class="branch-item">
-          <h5 class="branch">Уфа</h5>
-          <p class="address">365874,<br>
-                             г. Екатеринбург, ул. Ленина, 24,<br>
-                             офис 33</p>
-          <p class="phone">+7 926 620-44-44</p>
-          <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-          <p>365874,<br>
-             г. Екатеринбург, ул. Ленина, 24,<br>
-             офис 33</p>
-          <p>+7 926 620-44-44</p>
-          <p><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-        </article>
+          <article class="branch-item text-content">
+            <h5 class="branch">Уфа</h5>
+            <p class="address">365874,<br>
+                               г. Екатеринбург, ул. Ленина, 24,<br>
+                               офис 33</p>
+            <p class="phone">+7 926 620-44-44</p>
+            <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
+          </article>
 
-        <article class="branch-item">
-          <h5 class="branch">Пермь</h5>
-          <p class="address">365874,<br>
-                             г. Екатеринбург, ул. Ленина, 24,<br>
-                             офис 33</p>
-          <p class="phone">+7 926 620-44-44</p>
-          <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-          <p>365874,<br>
-             г. Екатеринбург, ул. Ленина, 24,<br>
-             офис 33</p>
-          <p>+7 926 620-44-44</p>
-          <p><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-        </article>
-      </section>
+          <article class="branch-item text-content">
+            <h5 class="branch">Пермь</h5>
+            <p class="address">365874,<br>
+                               г. Екатеринбург, ул. Ленина, 24,<br>
+                               офис 33</p>
+            <p class="phone">+7 926 620-44-44</p>
+            <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
+          </article>
+        </section>
+      </div>
     </main>
 
     <footer>
-      <section class="find-us">
-        <div class="map-block">
-
-        </div>
-        <article class="address-block">
-          <div class="container text-content">
-            <h5 class="branch">Главный офис</h5>
-            <p class="address">143009,<br>
-                               Моск. обл., г. Одинцово, ул. Северная, 24, офис 33</p>
-            <p class="phone">+7 926 620-44-44</p>
-            <p class="email"><a href="mailto:info@greenagro77.ru?subject=Запрос с сайта Грин Агро">info@greenagro77.ru</a></p>
-            <a href="contacts.html" class="btn">Задать вопрос</a>
-          </div>
-        </article>
-      </section>
-
       <div class="footer-menu container clearfix">
-        <nav class="footer-navigation menu">
+        <nav class="footer-navigation menu padding">
           <ul class="menu__i">
             <li><a href="about.html" class="menu-element__i">О компании</a></li>
             <li><span class="menu-element__i">Продукция</span>
@@ -201,7 +163,7 @@
             <li><a href="contacts.html" class="menu-element__i">Контакты</a></li>
           </ul>
         </nav>
-        <div class="footer-social">
+        <div class="footer-social padding">
           <a href="https://facebook.com" class="social-btn social-fb">Facebook</a>
           <a href="https://youtube.com" class="social-btn social-yt">Youtube</a>
         </div>
@@ -217,7 +179,7 @@
     </footer>
 
     <section class="popup popup-feedback">
-      <form class="feedback-form">
+      <form class="feedback-form popup-container">
         <div class="form-title">Задать вопрос</div>
         <input type="text" name="name" id="feedback_name" placeholder="Пожалуйста, представьтесь!" class="inputbox">
         <input type="email" name="email" id="feedback_mail" placeholder="На какой адрес прислать ответ?" class="inputbox">
@@ -225,13 +187,14 @@
         <textarea name="message" rows="5" class="inputbox" placeholder="Напишите ваш вопрос"></textarea>
         <div class="clearfix">
           <button type="submit" name="submit" class="btn">Отправить</button>
-          <a href="#" class="btn btn-close">Закрыть окно</a>
+          <a href="#" class="btn close-btn">Закрыть окно</a>
           <span class="personal">Отправляя эту форму, Вы соглашаетесь на обработку персональных данных.</span>
         </div>
-        <a href="#" class="btn-close">Закрыть окно</a>
+        <a href="#" class="close-btn">Закрыть окно</a>
       </form>
     </section>
 
     <script src="js/main.js" charset="utf-8"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2VVN-BEr8O6hGVM4ocaZEUxKwHK79jNQ&callback=initContactsMap"></script>
   </body>
 </html>
