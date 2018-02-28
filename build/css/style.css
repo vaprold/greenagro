@@ -1019,16 +1019,16 @@ main h1 {
   content: "";
   position: absolute;
 
-  width: 37px;
-  height: 37px;
+  width: 38px;
+  height: 39px;
   top: 80px;
   right: 16px;
 
-  background: url('../img/sprites.png') -24px -1221px;
+  background: url('../img/sprites.png') -23px -1220px;
 }
 
 .mainpage .product-list .product-item:hover::after {
-  background: url('../img/sprites.png') -24px -1136px;
+  background: url('../img/sprites.png') -23px -1135px;
 }
 
 /* Рисунки категорий */
@@ -1206,11 +1206,11 @@ main h1 {
   right: 13px;
   bottom: 14px;
 
-  background: url('../img/sprites.png') -24px -680px;
+  background: url('../img/sprites.png') -23px -679px;
 }
 
 .news-item:hover::after {
-  background: url('../img/sprites.png') -24px -752px;
+  background: url('../img/sprites.png') -23px -751px;
 }
 
 /* Новости на главной */
