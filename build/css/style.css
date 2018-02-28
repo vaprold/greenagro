@@ -41,11 +41,11 @@
   font-style: normal;
   font-weight: 400;
   src: local('PF DinDisplay Pro'),
-  url("../fonts/PFDinDisplayPro-Regular.woff2") format("woff2"), /* Modern Browsers */
-  url("../fonts/PFDinDisplayPro-Regular.woff") format("woff"), /* Modern Browsers */
-  url("../fonts/PFDinDisplayPro-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
-  url("../fonts/PFDinDisplayPro-Regular.eot") format('eot'), /* IE9 Compat Modes */
-  url("../fonts/PFDinDisplayPro-Regular.eot?#iefix") format("embedded-opentype"); /* IE6-IE8 */
+  url("../fonts/PFDinDisplayPro-Reg.woff2") format("woff2"), /* Modern Browsers */
+  url("../fonts/PFDinDisplayPro-Reg.woff") format("woff"), /* Modern Browsers */
+  url("../fonts/PFDinDisplayPro-Reg.ttf") format("truetype"), /* Safari, Android, iOS */
+  url("../fonts/PFDinDisplayPro-Reg.eot") format('eot'), /* IE9 Compat Modes */
+  url("../fonts/PFDinDisplayPro-Reg.eot?#iefix") format("embedded-opentype"); /* IE6-IE8 */
 }
 
 @font-face {
@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h3 {
-  font-style: 24px;
+  font-size: 24px;
 }
 
 h4 {
@@ -143,6 +143,52 @@ table th {
 .text-content h2 {
   margin-top: 60px;
   margin-bottom: 5px;
+}
+
+.text-content h3,
+.text-content h4,
+.text-content h5 {
+  margin-top: 40px;
+}
+
+/* Таблицы */
+
+.text-content table {
+  border-collapse: collapse;
+}
+
+.text-content th {
+  box-sizing: border-box;
+  padding: 0 15px;
+  padding-bottom: 13px;
+  text-align: left;
+}
+
+.text-content td {
+  box-sizing: border-box;
+  padding: 11px 15px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+}
+
+.text-content tr:nth-child(2n+1) > td {
+  background-color: #f4f4f4;
+}
+
+.sample-table th:nth-child(1) {
+  width: 69px;
+}
+
+.sample-table th:nth-child(2) {
+  width: 227px;
+}
+
+.sample-table th:nth-child(3) {
+  width: 195px;
+}
+
+.sample-table th:nth-child(4) {
+  width: 165px;
 }
 
 /* Картинки */
@@ -195,17 +241,27 @@ body p {
 /* Цитаты и выделения */
 
 .text-content mark {
+  display: block;
+  padding: 30px 45px;
+  border: 3px solid #7fac17;
+  background-color: transparent;
   font-size: 18px;
   line-height: 24px;
 }
 
 .text-content blockquote {
+  display: block;
+  margin: 0;
+  padding: 15px 45px;
+  border-left: 3px solid #7fac17;
   font-size: 18px;
   line-height: 24px;
 }
 
 .text-content blockquote cite {
+  display: block;
   color: #9a9a9a;
+  margin-top: 10px;
 
   font-size: 14px;
   line-height: 24px;
@@ -219,6 +275,10 @@ body ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+body ol {
+  margin: 0;
 }
 
 body li {
@@ -643,6 +703,11 @@ footer .address-content {
   padding-right: 15px;
 }
 
+footer .address-content h5 {
+  margin-top: 0;
+}
+
+
 footer .address-content .btn {
   margin-top: 40px;
 }
@@ -846,7 +911,7 @@ main h1 {
 
 /* Заголовки промо и новостей */
 
-.news-title .title-caption, .promo-title .title-caption{
+.title-caption {
   display: inline;
   box-decoration-break: clone;
   background-color: #61ab20;
@@ -856,10 +921,11 @@ main h1 {
   padding: 8px 0;
   box-shadow: 25px 0 0 rgba(97,171,32,.8), -25px 0 0 rgba(97,171,32,.8);
 
+  font-family: 'PFDinDisplayPro', Verdana, sans-serif;
   text-transform: uppercase;
-  font-size: 30.5px;
+  font-size: 30px;
   line-height: 50px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 /* Промо-блок */
@@ -1090,12 +1156,15 @@ main h1 {
 }
 
 .news-item .news-image {
-  width: 262px;
-  height: 142px;
+  width: 100%;
+  height: auto;
+  /* width: 262px; */
+  height: 142px; 
 }
 
 .news-item .news-content {
   padding: 20px;
+  min-height: 130px;
 }
 
 .news-item:hover {
@@ -1123,12 +1192,8 @@ main h1 {
 .main-news .news-item {
   float: left;
   width: 262px;
-  height: 310px;
+  /* height: 310px; */
   margin-right: 28px;
-}
-
-.main-news .news-item .news-content {
-  min-height: 130px;
 }
 
 .main-news .news-content h5 {
@@ -1536,11 +1601,37 @@ p + .figure-block {
   margin-right: 0;
 }
 
-/* Новости */
+/* Страница новости */
+
+.news-title {
+  position: relative;
+  margin-bottom: 20px;
+  /* height: 380px; */
+}
 
 .news-title h2 {
-  font-size: 30px;
-  line-height: 50px;
+  line-height: normal;
+  }
+
+.news-title figcaption  {
+  position: absolute;
+  margin: 0 48px;
+  bottom: 18px;
+}
+
+.news-title img {
+  width: 100%;
+  height: auto;
+}
+
+/* Костыли на странице новости */
+
+.news-title + .news-date {
+  font-size: 14px;
+}
+
+.news-date + h2 {
+  margin-top: 20px;
 }
 
 /* Блок новостей в "новостях"" */
@@ -1551,6 +1642,7 @@ p + .figure-block {
 
 .news-page .news-image {
   float:left;
+  width: 262px;
 }
 
 .news-page .news-date {
@@ -1594,10 +1686,15 @@ p + .figure-block {
   padding: 10px;
   width: 40px;
   height: 40px;
+  margin-right: 5px;
 
   line-height: 20px;
   vertical-align: middle;
   text-decoration: underline;
+}
+
+.news-paginator .page-btn:last-of-type {
+  margin-right: 0;
 }
 
 .news-paginator .page-btn.active {

@@ -1,51 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+    <title>test</title>
   </head>
   <body>
-    <div id="map"></div>
-    <script>
-      function initMap() {
-        var msk = {lat: 55.746670, lng: 37.413048};
-        var office = {lat: 55.678803, lng: 37.253474};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 17,
-          center: msk,
-          scrollwheel:  false
-        });
-        var image = {
-        url: 'img/map-point.png',
-        // This marker is 20 pixels wide by 32 pixels high.
-        size: new google.maps.Size(231, 190),
-        // The origin for this image is (0, 0).
-        origin: new google.maps.Point(0, 0),
-        // The anchor for this image is the base of the flagpole at (0, 32).
-        anchor: new google.maps.Point(50, 190)
-      };
-        var marker = new google.maps.Marker({
-          position: office,
-          icon: image,
-          map: map
-        });
+    <style media="screen">
+      .container {
+        position: relative;
+        width: 600px;
+        height: 300px;
+        border: 2px solid orangered;
+
+        margin: 400px auto;
+        text-align: center;
+        overflow: hidden;
       }
+
+      .sub-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /* left: 50%;
+        top: 50%;
+        margin-left: -50%;
+        margin-top: -50%; */
+
+        background-color: yellowgreen;
+      }
+      img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        margin: auto;
+      }
+    </style>
+
+    <div class="container">
+      <!-- <div class="sub-container"> -->
+        <img src="img/news-1.jpg">
+      <!-- </div> -->
+    </div>
+
+    <script type="text/javascript">
+      // var img = document.querySelector('img');
+      // var subContainer = document.querySelector('.sub-container');
+      // var container = document.querySelector('.container');
+      //
+      // img.addEventListener('load', function() {
+      //   debugger;
+      //   img.style.width = container.clientWidth + "px";
+      //   subContainer.style.width = img.width + "px";
+      //   subContainer.style.height = img.height + "px";
+      //   subContainer.style.marginLeft = -img.width / 2 + "px";
+      //   subContainer.style.marginTop = -img.height / 2 + "px";
+      // });
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2VVN-BEr8O6hGVM4ocaZEUxKwHK79jNQ&callback=initMap"
-    async defer></script>
   </body>
 </html>
