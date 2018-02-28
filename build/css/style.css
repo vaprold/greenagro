@@ -1180,13 +1180,12 @@ main h1 {
   margin-bottom: 8px;
 }
 
-.news-item .news-image {
-  width: 100%;
+.news-content p {
+  font-size: 16px;
 }
 
-.news-item .news-image img {
-  /* width: 262px; */
-  /* height: 142px;  */
+.news-item .news-image {
+  width: 100%;
 }
 
 .news-item .news-content {
@@ -1202,8 +1201,8 @@ main h1 {
   display: block;
   position: absolute;
   content: "";
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   right: 13px;
   bottom: 14px;
 
@@ -1219,7 +1218,6 @@ main h1 {
 .main-news .news-item {
   float: left;
   width: 262px;
-  /* height: 310px; */
   margin-right: 28px;
 }
 
@@ -1254,10 +1252,6 @@ main h1 {
 }
 
 /* Изображение с обтекающим текстом */
-
-.figure-block {
-  /* padding: 10px 0; */
-}
 
 p + .figure-block {
   margin-top: 56px;
@@ -1320,7 +1314,6 @@ p + .figure-block {
 .two-cols .col {
   float: left;
   width: calc(50% - 17px);
-  /* margin-bottom: 10px; */
 }
 
 .two-cols .col:nth-child(2n+1) {
@@ -1661,14 +1654,16 @@ p + .figure-block {
   margin-top: 20px;
 }
 
-/* Блок новостей в "новостях"" */
+/* Блок новостей в "новостях" */
 
 .news-page .news-item {
   margin-bottom: 18px;
+  font-size: 0;
 }
 
 .news-page .news-image {
-  float:left;
+  display: inline-block;
+  vertical-align: top;
   width: 262px;
 }
 
@@ -1678,7 +1673,8 @@ p + .figure-block {
 }
 
 .news-page .news-content {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   box-sizing: border-box;
   width: calc(100% - 262px);
   padding-right: 110px;
@@ -1741,6 +1737,16 @@ p + .figure-block {
   background-color: transparent;
   color: #9a9a9a;
   cursor: default;
+}
+
+/* Новости в боковой панели */
+
+.news-side .news-item {
+  margin-bottom: 10px;
+}
+
+.news-side .news-item:last-child {
+  margin-bottom: 0;
 }
 
 /* Спрайты */
