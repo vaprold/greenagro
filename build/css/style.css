@@ -82,32 +82,6 @@ body .shown {
   padding: 0 15px;
 }
 
-/* Фиксировать пропорции картинки */
-
-.img-aspect {
-  position: relative;
-  overflow: hidden;
-}
-
-.img-aspect::before {
-  content: "";
-  display: block;
-  padding-top: 54%;
-}
-
-.img-aspect img {
-  position: absolute;
-  width: 100%;
-  height: auto;
-
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  margin: auto;
-}
-
 /* Базовые стили */
 
 body {
@@ -1164,6 +1138,7 @@ main h1 {
   border: 1px solid #e6e6e6;
 
   background-color: #fff;
+  overflow: hidden;
 }
 
 .news-date {
@@ -1182,11 +1157,9 @@ main h1 {
 
 .news-item .news-image {
   width: 100%;
-}
-
-.news-item .news-image img {
+  height: auto;
   /* width: 262px; */
-  /* height: 142px;  */
+  height: 142px; 
 }
 
 .news-item .news-content {
