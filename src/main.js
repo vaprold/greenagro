@@ -14,13 +14,14 @@ var browserCookies = require('browser-cookies');
  * Отрисовка гулокарты
  */
 function initMap(isContacts) {
-  var msk = isContacts ? {lat: 55.711987, lng: 37.483867} : {lat: 55.709623, lng: 37.593688};
+  var msk = isContacts ? {lat: 55.743717, lng: 37.670498} : {lat: 55.709623, lng: 37.593688};
   var office = {lat: 55.678803, lng: 37.253474};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 11,
     center: msk,
     scrollwheel:  false
   });
+  if (isContacts) {map.zoom = 10;}
   var image = {
   url: 'img/map-point.png',
   // This marker is 20 pixels wide by 32 pixels high.

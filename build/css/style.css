@@ -220,8 +220,13 @@ table th {
 /* Картинки */
 
 figure {
-  margin: 0;
-  margin-bottom: 30px;
+  margin: 20px 0;
+  /* margin-bottom: 30px; */
+}
+
+figure figcaption {
+  font-size: 12px;
+  text-align: center;
 }
 
 figure img {
@@ -702,7 +707,7 @@ footer .footer-find-us .map-block {
   height: 320px;
 
   background-color: #ddeac1;
-  background-image: url('../img/footer-map+.jpg');
+  background-image: url('../img/footer-map.jpg');
   background-position: calc(50% - 170px) center;
 
   /* background-size: 100% auto; */
@@ -1228,7 +1233,8 @@ main h1 {
   margin-right: 28px;
 }
 
-.main-news .news-content h5 {
+.main-news .news-content h5,
+.news-side .news-content h5 {
   text-transform: none;
   font-weight: normal;
   font-family: 'PFDinTextPro', Arial, sans-serif;
@@ -1260,8 +1266,8 @@ main h1 {
 
 /* Изображение с обтекающим текстом */
 
-p + .figure-block {
-  margin-top: 56px;
+.text-content .figure-block {
+  margin: 20px 0;
 }
 
 .figure-text {
@@ -1638,6 +1644,7 @@ p + .figure-block {
   position: absolute;
   margin: 0 48px;
   bottom: 18px;
+  text-align: left;
 }
 
 .news-title img {
@@ -1649,6 +1656,7 @@ p + .figure-block {
 
 .news-title + .news-date {
   font-size: 14px;
+  margin-bottom: 20px;
 }
 
 .news-date + h2 {
