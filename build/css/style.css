@@ -864,7 +864,9 @@ footer .address-content .btn {
   height: 476px;
   left: 0;
   right: 0;
-  margin-top: 10%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   padding: 60px 100px;
 
   background-color: #f4f4f4;
@@ -957,8 +959,10 @@ main h1 {
 /* Промо-блок */
 
 .promo-block {
-  height: 430px;
-  /* background-color: lime; */
+  height: 25vw;
+  /* height: calc((100vw - 1170px) * 0.2 + 330px); */
+  margin-bottom: 40px;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -978,6 +982,9 @@ main h1 {
 /* Главная */
 
 .mainpage .promo-block {
+  height: 430px;
+  margin-bottom: 0;
+
   background-color: #5e443c;
   background-image: url('../img/main-promo.jpg');
   background-size: auto 100%;
@@ -1461,25 +1468,16 @@ p + .figure-block {
 /* Промо-заголовки */
 
 .promo-block.livestock {
-  height: 380px;
-  margin-bottom: 40px;
-
   background-color: #a7a068;
   background-image: url("../img/livestock-promo.jpg");
 }
 
 .promo-block.pig {
-  height: 380px;
-  margin-bottom: 40px;
-
   background-color: #9e8887;
   background-image: url("../img/pig-promo.jpg");
 }
 
 .promo-block.poultry {
-  height: 380px;
-  margin-bottom: 40px;
-
   background-color: #7f7140;
   background-image: url("../img/poultry-promo.jpg");
 }
@@ -1604,6 +1602,9 @@ p + .figure-block {
 }
 
 /* Филиалы */
+.branches-block {
+  display: none;
+}
 
 .branches-block > h2 {
   margin-top: 40px;
