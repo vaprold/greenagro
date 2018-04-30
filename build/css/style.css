@@ -111,8 +111,6 @@ body .shown {
 /* Базовые стили */
 
 body {
-  min-width: 1170px;
-
   background-image: url('../img/background-pattern.png');
   background-repeat: repeat;
   background-color: #fafafa;
@@ -1045,43 +1043,40 @@ main h1 {
 
 /* Рисунки категорий */
 
-.mainpage .product-list .product-item.product-poultry::before {
+.mainpage .product-list .product-item::before {
   display: block;
   content: "";
   position: absolute;
 
-  left: 112px;
+  left: 50%;
+  background-image: url('../img/sprites.png');
+}
+
+.mainpage .product-list .product-item.product-poultry::before {
+  margin-left: -67px;
   top: 25px;
   width: 136px;
   height: 90px;
 
-  background: url('../img/sprites.png') -24px -2276px;
+  background-position: -24px -2276px;
 }
 
 .mainpage .product-list .product-item.product-pig::before {
-  display: block;
-  content: "";
-  position: absolute;
-
-  left: 116px;
+  margin-left: -63px;
   top: 32px;
   width: 133px;
   height: 85px;
 
-  background: url('../img/sprites.png') -24px -2143px;
+  background-position: -24px -2143px;
 }
 
 .mainpage .product-list .product-item.product-livestock::before {
-  display: block;
-  content: "";
-  position: absolute;
-
-  left: 113px;
+  margin-left: -66px;
   top: 24px;
   width: 132px;
   height: 93px;
 
-  background: url('../img/sprites.png') -24px -2414px;
+  background-position: -24px -2414px;
 }
 
 .mainpage .product-item .product-caption {
@@ -1130,12 +1125,16 @@ main h1 {
   width: 525px;
 }
 
+.video-block video {
+  width: 525px;
+}
+
 .video-block h5 {
   margin-bottom: 10px;
 }
 
 .video-block .video-src {
-  height: 328px;
+  /* height: 328px; */
 
   font-size: 0;
   line-height: 0;
@@ -1279,22 +1278,22 @@ main h1 {
   margin: 0;
 }
 
-.figure-block.left-text .figure-text {
+.left-text .figure-text {
   float: left;
   padding-left: 0;
 }
 
-.figure-block.left-text figure {
+.left-text figure {
   float: right;
   padding-right: 0;
 }
 
-.figure-block.right-text .figure-text {
+.right-text .figure-text {
   float: right;
   padding-right: 0;
 }
 
-.figure-block.right-text figure {
+.right-text figure {
   float: left;
   padding-left: 0;
 }
@@ -1756,6 +1755,317 @@ main h1 {
 
 .news-side .news-item:last-child {
   margin-bottom: 0;
+}
+
+/* Адаптивная вёрстка */
+
+
+/* Широкий экран */
+@media (min-width: 1170px) {
+
+.container {
+  width: 1170px;
+}
+
+body {
+  min-width: 650px;
+}
+
+}
+
+@media (min-width: 650px) and (max-width: 1170px) {
+
+  body {
+    min-width: 1170px;
+  }
+
+}
+
+/* Мобильная версия */
+
+@media (max-width: 650px) {
+
+.container {
+  width: 100%;
+}
+
+body {
+  min-width: 358px;
+  width: 100%;
+  max-width: 620px;
+}
+
+.padding {
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, .feedback-form .form-title {
+  margin-top: 30px;
+  line-height: normal;
+}
+
+/* Меню */
+
+.header-tools {
+  padding: 20px 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.menu-logo {
+  text-align: center;
+  width: 100%;
+}
+
+.menu li {
+  display: block;
+}
+
+.menu .menu-element__i {
+  padding: 0;
+  display: block;
+}
+
+.menu li.active > .menu-element__i::after {
+  left: 0;
+  right: 0;
+}
+
+.menu .submenu .menu-element__i {
+  padding: 4px 8px;
+}
+
+.menu.main-navigation {
+  width: 100%;
+  text-align: left;
+}
+
+.menu .submenu {
+  display: block;
+  position: relative;
+  margin-left: 20px;
+}
+
+.menu .submenu li {
+  max-width: 100%;
+}
+
+/* Контент */
+.mainpage .text-content {
+  float: none;
+  width: auto;
+}
+
+.main-news .title .btn {
+  position: inherit;
+  margin: 0;
+}
+
+.left-column,
+.right-column {
+  width: 100%;
+}
+
+.figure-block figure,
+.figure-block .figure-text {
+  float: none;
+  width: 100%;
+}
+
+.figure-block figure {
+  margin-bottom: 20px;
+}
+
+.figure-block.oreganic-fix .figure-text {
+  margin-top: 0;
+}
+
+/* Промо */
+
+.mainpage .promo-block {
+  background-image: none;
+  height: auto;
+  padding-bottom: 30px;
+  /* background-color: transparent; */
+}
+
+.promo-block {
+  /* height: auto; */
+  padding-bottom: 30px;
+}
+
+.promo-content {
+  width: 100%;
+  text-align: center;
+}
+
+.promo-content.padding {
+  padding: 0;
+}
+
+
+.promo-title {
+  text-align: left;
+}
+
+.title-caption {
+  display: block;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.mainpage .main-content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.mainpage .product-list {
+  padding: 15px;
+}
+
+.mainpage .product-list .product-item {
+  width: 100%;
+}
+
+.video-block {
+  float: none;
+  width: auto;
+}
+
+.video-block video {
+  width: 100%;
+}
+
+.main-news {
+  padding-top: 0;
+}
+
+.main-news .news-item {
+  float: none;
+  width: 100%;
+  margin-right: 0;
+}
+
+.about-cols.two-cols {
+  text-align: center;
+}
+
+.figure-text.two-cols {
+  padding: 0;
+}
+
+.figure-text.two-cols .col {
+  float: none;
+  width: 100%;
+}
+
+.two-cols.oregano-cols .col {
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+
+.two-cols.oregano-cols .figure-text {
+  width: 100%;
+}
+
+.product-block__i {
+  padding: 0 15px;
+}
+
+.product-block__i figure img {
+  margin: 0;
+}
+
+.features-block .feature-item {
+  width: 50%;
+  margin-right: 0;
+}
+
+.news-page .news-image,
+.news-page .news-content {
+  display: block;
+  width: 100%;
+}
+
+.news-paginator .btn {
+  display: none;
+}
+
+.news-side {
+  display: none;
+}
+
+.feedback-form {
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.feedback-form .personal {
+  line-height: normal;
+  margin-top: 15px;
+}
+
+.popup-feedback .feedback-form {
+  width: 90%;
+  height: 550px;
+  padding: 20px;
+}
+
+.find-us-block .address-content {
+  padding: 0 15px;
+}
+
+.find-us-block .address__i {
+  float: none;
+  margin-bottom: 15px;
+  left: 50%;
+  margin-left: -110px;
+}
+
+/* Меню в футере */
+
+footer .footer-find-us .address-block {
+  position: relative;
+  left: 0;
+  margin-left: 0;
+  width: 100%;
+}
+
+footer .address-content {
+  padding-right: 40px;
+}
+
+footer .footer-find-us .address-block {
+  height: auto;
+}
+
+.menu.footer-navigation {
+  /* width: 100%; */
+  display: none;
+}
+
+.footer-menu {
+    background-color: #f4f4f4;
+}
+
+.footer-social {
+  text-align: center;
+  float: none;
+  width: 100%;
+}
+
+.footer-social .social-btn:first-child {
+  margin-left: 0;
+}
+
+.footer-copyright p {
+  padding: 15px;
+}
+
 }
 
 /* Спрайты */
