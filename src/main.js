@@ -15,7 +15,8 @@ var browserCookies = require('browser-cookies');
  */
 function initMap(isContacts) {
   var isMobile = (window.screen.width <= 650);
-  var msk = isMobile ? {lat: 55.823293, lng: 37.643637} : isContacts ? {lat: 55.743717, lng: 37.670498} : {lat: 55.709623, lng: 37.593688};
+  // alert ('Screen: ' + window.screen.width + 'px x ' + window.screen.height + 'px, isMobile: ' + isMobile + ', isContacts: ' + isContacts);
+  var msk = isMobile ? {lat: 55.828903, lng: 37.577989} : isContacts ? {lat: 55.743717, lng: 37.670498} : {lat: 55.709623, lng: 37.593688};
   var office = {lat: 55.678803, lng: 37.253474};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: isMobile ? 9 : isContacts ? 10 : 11,

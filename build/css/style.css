@@ -1208,7 +1208,7 @@ main h1 {
   background-color: #dbf1a9;
 }
 
-.news-item::after {
+.news-item a::after {
   display: block;
   position: absolute;
   content: "";
@@ -1220,7 +1220,7 @@ main h1 {
   background: url('../img/sprites.png') -23px -679px;
 }
 
-.news-item:hover::after {
+.news-item:hover a::after {
   background: url('../img/sprites.png') -23px -751px;
 }
 
@@ -1585,6 +1585,8 @@ main h1 {
 
 .feedback-form textarea.inputbox {
   margin-bottom: 14px;
+  min-height: 148px;
+  resize: none;
 }
 
 .feedback-form .btn:not(.close-btn) {
@@ -1990,6 +1992,10 @@ h1, h2, h3, h4, h5, h6, .feedback-form .form-title {
   width: 100%;
 }
 
+.news-page .news-content {
+  padding-right: 20px;
+}
+
 .news-paginator .btn {
   display: none;
 }
@@ -2011,8 +2017,17 @@ h1, h2, h3, h4, h5, h6, .feedback-form .form-title {
 
 .popup-feedback .feedback-form {
   width: 90%;
-  height: 550px;
+  height: 500px;
   padding: 20px;
+}
+
+.popup-feedback .form-title {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.popup-feedback .feedback-form .btn.close-btn {
+  display: none;
 }
 
 .find-us-block .address-content {
@@ -2065,6 +2080,24 @@ footer .footer-find-us .address-block {
 .footer-copyright p {
   padding: 15px;
 }
+
+}
+
+@media (max-height: 500px) {
+
+  .popup-feedback .feedback-form {
+    height: 360px;
+  }
+
+  .popup-feedback .feedback-form .inputbox {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .popup-feedback .feedback-form textarea.inputbox {
+    min-height: 40px;
+    height: 40px;
+  }
 
 }
 
